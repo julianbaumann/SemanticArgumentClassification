@@ -1,0 +1,16 @@
+Semantic Argument Classification
+
+general :
+	programming language : python 3.4.2
+	libraries : nltk 3.0.0
+	corpora : propbank
+
+process :
+	1. collect papers
+	2. extract propbank features to ARFF http://www.nltk.org/howto/propbank.html
+        2.1 Was für Features? (Support Vector Learning for Semantic Argument Classification)
+            -Syntax Features
+            -...
+	3. Weka laufen lassen
+    4. ???
+	5. profit
