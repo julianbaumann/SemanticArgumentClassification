@@ -1,0 +1,9 @@
+\begin{thebibliography}{1}
+
+\bibitem{svm}
+Sameer Pradhan, Kadri Hacioglu, Valerie Krugler, Wayne Ward, JamesH. Martin,
+  and Daniel Jurafsky.
+\newblock Support vector learning for semantic argument classification.
+\newblock {\em Machine Learning}, 60(1-3):11--39, 2005.
+
+\end{thebibliography}

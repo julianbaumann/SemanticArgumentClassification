@@ -4,6 +4,12 @@
 \usepackage{ngerman}
 \usepackage{gantt}
 \usepackage{listings}
+\usepackage{cite}
+
+\definecolor{airforce}{rgb}{0.36, 0.54, 0.66}
+\definecolor{amber}{rgb}{1.0, 0.75, 0.0}
+\definecolor{pastelgreen}{rgb}{0.01, 0.75, 0.24}
+\definecolor{deepcarrot}{rgb}{0.91, 0.41, 0.17}
 
 \begin{document}
 
@@ -18,38 +24,43 @@
 \maketitle
 
 \section{Einleitung}
-\textit{Wem} ist durch \textit{wen}, \textit{was}, \textit{wo}, \textit{wie}, \textit{wann} widerfahren? Genau diese Fragen beantwortet die semantische Argumentklassifikation. Den Argumenten des Verbs ihre semantischen Rollen zuzuweisen ist f\"ur das tiefere Verst\"andnis textueller Daten unumg\"anglich. Um diese Aufgabe bestm\"oglich zu l\"osen, testen wir verschiedene Klassifikationsalgorithmen und orientieren uns dabei an [hier unser einziges relevantes Paper einf\"ugen].
+\textit{Wem} ist durch \textit{wen}, \textit{was}, \textit{wo}, \textit{wie}, \textit{wann} widerfahren? Genau diese Fragen beantwortet die semantische Argumentklassifikation. Den Argumenten des Verbs ihre semantischen Rollen zuzuweisen ist f\"ur das tiefere Verst\"andnis textueller Daten unumg\"anglich. Um diese Aufgabe bestm\"oglich zu l\"osen, testen wir verschiedene Klassifikationsalgorithmen und orientieren uns dabei an Support Vector Learning for Semantic Argument Classiﬁcation\cite{svm}.
 \subsection{Organisatorisches}
-[hier Gantt-Diagramm einf\"ugen]
-
-\begin{gantt}{10}{9}
+\begin{gantt}{13}{10}
     \begin{ganttitle}
-      \titleelement{Mai}{1}
-      \titleelement{Juni}{4}
-      \titleelement{Juli}{4}
+      \titleelement{Oktober}{1}
+      \titleelement{November}{2}
+      \titleelement{Dezember}{3}
+      \titleelement{Januar}{2}
+      \titleelement{Februar}{2}
     \end{ganttitle}
     \begin{ganttitle}
-      \titleelement{27.05.}{1}
-      \titleelement{03.06.}{1}
-      \titleelement{10.06.}{1}
-      \titleelement{17.06.}{1}
-      \titleelement{24.06.}{1}      
-      \titleelement{01.07.}{1}
-      \titleelement{08.07.}{1}
-      \titleelement{15.07.}{1}
-      \titleelement{22.07.}{1}
+      \titleelement{22.10.}{1}
+      \titleelement{05.11.}{1}
+      \titleelement{19.11.}{1}
+      \titleelement{3.12.}{1}
+      \titleelement{17.12.}{1}
+      \titleelement{31.12.}{1}
+      \titleelement{14.1.}{1}
+      \titleelement{28.1.}{1}
+      \titleelement{11.2.}{1}
+      \titleelement{28.2.}{1}
     \end{ganttitle}
-    \ganttbar{Pipeline läuft}{0}{2}
-    \ganttmilestone[color=blue]{1. \textit{Sieve} läuft}{2}
-    \ganttbar{\textit{Sieves} einfügen}{2}{3}
-    \ganttmilestone[color=blue]{\textit{Sieves} laufen}{5}
-    \ganttbar{Evaluation}{5}{2}
-    \ganttbar[color=blue]{Bugfixes}{2}{5}
-    \ganttbar{Präsentation}{7}{1}
-    \ganttbar[color=blue]{Dokumentation}{5}{4}
-  \end{gantt}
+    \ganttbar[color=pastelgreen]{Team \& Thema}{0}{1}
+    \ganttbar[color=pastelgreen]{Paper \& Ressourcen}{1}{1}
+    \ganttbar[color=pastelgreen]{Umsetzungsplanung}{2}{2}
+    \ganttmilestone[color=airforce]{Statusbericht}{4}
+    \ganttbar[color=deepcarrot]{Feature-Extraktion}{4}{3}
+    \ganttbar[color=deepcarrot]{Experimente (Weka)}{6}{2}
+    \ganttmilestone[color=airforce]{Grundarchitektur +1 Feature}{6}
+    \ganttbar[color=pastelgreen]{Pr\"asentation vorbereiten}{6}{1}
+    \ganttbar[color=pastelgreen]{Endbericht und Dokumentation}{6}{2}
+    \ganttmilestone[color=airforce]{Endbericht}{9}
+    \ganttbar[color=amber]{Puffer}{8}{1}
+\end{gantt}
 
 \section{Grundlagen}
+\textbf{TODO:} Kevin
 \subsection{Daten}
 PropBank in NLTK (Gr\"o\ss{}e)\\
 112917 PropBank-Instanzen/S\"atze\\
@@ -70,6 +81,7 @@ Trainings- und Testdaten aufsplitten ~(60\% Training, 20\% Test, 20\% Developmen
 
 \section{Hauptteil}
 \subsection{Zielsetzung}
+\textbf{TODO:} Julian\\
 die automatische Zuordnung mittels Supervised Learning von\\
 \\
 \begin{table}
@@ -92,6 +104,7 @@ ARGM & modifier \\
 \end{table}
  
 \subsection{Umsetzung}
+\textbf{TODO:} Julian\\
 Feature-Extraktion mit Python:
 \begin{lstlisting}[frame=lines]
 featureList = [...] # zu extrahierende Features
@@ -116,9 +129,14 @@ for pbInstance in pbInstances :
 siehe Support Vector Learning for Semantic Argument Classiﬁcation
 
 \subsection{Evaluation}
+\textbf{TODO:} Max\\
 Evaluation gegen Support Vector Learning for Semantic Argument Classiﬁcation
 
 \section{Ausblick}
+\textbf{TODO:} Max
 
-	
+\section{Literatur}
+\bibliography{lit}{}
+\bibliographystyle{plain}
+
 \end{document}
