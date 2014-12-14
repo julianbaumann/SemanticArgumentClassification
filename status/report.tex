@@ -24,7 +24,7 @@
 \maketitle
 
 \section{Einleitung}
-\textit{Wem} ist durch \textit{wen}, \textit{was}, \textit{wo}, \textit{wie}, \textit{wann} widerfahren? Genau diese Fragen beantwortet die semantische Argumentklassifikation. Den Argumenten des Verbs ihre semantischen Rollen zuzuweisen ist f\"ur das tiefere Verst\"andnis textueller Daten unumg\"anglich. Um diese Aufgabe bestm\"oglich zu l\"osen, testen wir verschiedene Klassifikationsalgorithmen und orientieren uns dabei an Support Vector Learning for Semantic Argument Classiﬁcation\cite{svm}.
+\textit{Wem} ist durch \textit{wen}, \textit{was}, \textit{wo}, \textit{wie}, \textit{wann} widerfahren? Genau diese Fragen beantwortet die semantische Argumentklassifikation. Den Argumenten des Verbs ihre semantischen Rollen zuzuweisen ist f\"ur das tiefere Verst\"andnis textueller Daten unumg\"anglich. Um diese Aufgabe bestm\"oglich zu l\"osen, testen wir verschiedene Klassifikationsalgorithmen und orientieren uns dabei an \textit{Support Vector Learning for Semantic Argument Classiﬁcation}\cite{svm}.
 \subsection{Organisatorisches}
 \begin{gantt}{13}{10}
     \begin{ganttitle}
@@ -126,14 +126,16 @@ for pbInstance in pbInstances :
 \item headword : nominal
 \item subcategorization : nominal
 \end{itemize}
-siehe Support Vector Learning for Semantic Argument Classiﬁcation
+siehe Support Vector Learning for Semantic Argument Classiﬁcation\cite{svm}
 
 \subsection{Evaluation}
-\textbf{TODO:} Max\\
-Evaluation gegen Support Vector Learning for Semantic Argument Classiﬁcation
+Um die Effizienz und Pr\"azision der angewandten Methoden zu ermitteln, erfolgt im Anschluss zu Feature-Extraktion und Experimenten eine Evaluation in zwei Stufen.\\
+Zun\"achst werden SVM, NaiveBayes und J48 gegeneinander in Hinsicht auf Precision, Recall und F1-Measure verglichen. Da PropBank bereits golden annotiert ist, muss keine weitere manuelle Annotation als Vergleichsgrundlage erstellt werden. Weiterhin kann die Feature-Auswahl f\"ur jeden Algorithmus hinsichtlich ihrer Effizienz optimiert werden.\\
+Optional k\"onnen insbesondere die Ergebnisse des SVM-Verfahrens gegen die des Papers \textit{Support Vector Learning for Semantic Argument Classiﬁcation}\cite{svm} verglichen werden.
 
 \section{Ausblick}
-\textbf{TODO:} Max
+Im n\"achsten geplanten Schritt wird die Feature-Extraktion durchgef\"uhrt. Die Funktionsvielfalt des NLTK wird hierbei \"au\ss{}erst hilfreich sein. Die anschlie\ss{}enden Experimente in Weka werden auf Grund der verschiedenen Algorithmen und ihrer jeweiligen Feature-Optimierung zeitaufw\"andig, dank Wekas \"ubersichtlichen Workflow jedoch gut umzusetzen sein.\\
+Wir sind auf die Ergebnisse gespannt und hoffen, dass sie die Auswahl der effizientesten Methode zur semantischen Argumentklassifizierung in Zukunft erleichtern werden.
 
 \section{Literatur}
 \bibliography{lit}{}
