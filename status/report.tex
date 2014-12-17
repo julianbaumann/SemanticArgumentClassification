@@ -62,7 +62,7 @@
 \section{Grundlagen}
 \textbf{TODO:} Kevin
 \subsection{Daten}
-PropBank in NLTK (Gr\"o\ss{}e)\\
+PropBank in NLTK (Penn Treebank) (Gr\"o\ss{}e)\\
 112917 PropBank-Instanzen/S\"atze\\
 292975 Argumente
 \subsection{Tools}
@@ -81,8 +81,9 @@ Trainings- und Testdaten aufsplitten ~(60\% Training, 20\% Test, 20\% Developmen
 
 \section{Hauptteil}
 \subsection{Zielsetzung}
-\textbf{TODO:} Julian\\
-die automatische Zuordnung mittels Supervised Learning von\\
+
+Unser Ziel ist es Verbargumenten ihre semantischen Rollen zuzuweisen. Wir orientieren uns am PropBank Annotationsschema und
+wollen die Argumente in ARG[0-4] bzw. ARGM einteilen. Unsere Instanzen sind dabei die Gold Argumente des PropBank Penn Treebank Korpus\\
 \\
 \begin{table}
 \centering
@@ -104,8 +105,8 @@ ARGM & modifier \\
 \end{table}
  
 \subsection{Umsetzung}
-\textbf{TODO:} Julian\\
-Feature-Extraktion mit Python:
+
+Wir extrahieren die Features und die Klasse aus unseren Instanzen des ProbBank Korpus wie folgt:
 \begin{lstlisting}[frame=lines]
 featureList = [...] # zu extrahierende Features
 for pbInstance in pbInstances :
@@ -139,6 +140,6 @@ Wir sind auf die Ergebnisse gespannt und hoffen, dass sie die Auswahl der effizi
 
 \section{Literatur}
 \bibliography{lit}{}
-\bibliographystyle{plain}
+\bibliographystyle{agsm}
 
 \end{document}
