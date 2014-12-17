@@ -60,30 +60,34 @@
 \end{gantt}
 
 \section{Grundlagen}
-\textbf{TODO:} Kevin
+
 \subsection{Daten}
-PropBank in NLTK (Penn Treebank) (Gr\"o\ss{}e)\\
-112917 PropBank-Instanzen/S\"atze\\
-292975 Argumente
+
+Als Grundlage f\"ur die oben beschriebenen Experimente wird das PropBank-Korpus aus dem Natural Language Toolkit verwendet. Das urspr\"ungliche Korpus von Martha Palmer et al. \cite{Palmer} umfasst eine gr\"o{\ss}ere Anzahl an PropBank-Instanzen, das im NLTK verwendete besteht allerdings nur aus 112.917 S\"atzen. 
+Jedem dieser Sätze wurden seine entsprechenden Argumente durch Annotatoren zugewiesen. Da die meisten S\"atze mindestens zwei Argumente besitzen (Subjekt und direktes Objekt) umfasst PropBank 292.975 annotierte Argumente. Diese Daten dienen als Goldstandard f\"ur die anschlie{\ss}ende Evaluation des Verfahrens.
+
+
+
 \subsection{Tools}
-Python 3.4\\
-NLTK 3.0.0\\
-Weka 3.7.11
+Zur Datenverarbeitung und Auswertung wird die Programmiersprache Python verwendet in der Version 3.4, um die Feature-Extraktion durchzuf\"uhren. Durch die Wahl von Python, bietet sich das NLTK als Ressource f\"ur Sprachverarbeitung an, entsprechend in der Version 3.0.0. Als Machine Learning Tool mit dem die unten aufgef\"uhrten
+Algorithmen verwendet werden Weka 3.7.11 eingesetzt.
+
 \subsection{Algorithmen}
-Classifiers\\
-SVM\\
-NaiveBayes\\
-J48
+Im Laufe des Experiments werden drei verschiedene Klassifizierer eingesetzt, um das bestm\"ogliche Ergebnis in der Argumentklassifikation zu erreichen: eine Support Vector
+Machine, ein NaiveBayes-Klassifkator und J48, eine OpenSource Java-Implementierung des C4.5-Decision-Tree-Algorithmus. Diese werden dann in der Evaluation gegeneinander 
+verglichen um festzustellen, welcher Klassifizierer das beste Ergebnis erzielt. 
+
 \subsection{Vergleichsgrundlagen}
-Paper: Support Vector Learning for Semantic Argument Classiﬁcation\\
-PropBanks goldene Annotierung\\
-Trainings- und Testdaten aufsplitten ~(60\% Training, 20\% Test, 20\% Development) 
+Um einen Vergleich der Algorithmen ziehen zu k\"onnen, werden verschiedene Vergleichsgrundlagen verwendet. Die Daten aus dem PropBank-Korpus werden zun\"achst in Trainings-, Test- und 
+Entwicklungsset aufgeteilt. Da diese bereits annotiert wurden, dienen sie somit als Goldstandard, der zur Berechnung von Precision, Recall und F1-Measure verwendet wird unter Verwendung
+der verschiedenen Klassifizierer. Zus\"atzlich k\"onnen die Ergebnisse aus dem Paper \textit{Support Vector Learning for Semantic Argument Classiﬁcation} von Pradhan et al. mit denen des SVM-Klassifkator verglichen werden.
+
 
 \section{Hauptteil}
 \subsection{Zielsetzung}
 
 Unser Ziel ist es Verbargumenten ihre semantischen Rollen zuzuweisen. Wir orientieren uns am PropBank Annotationsschema und
-wollen die Argumente in ARG[0-4] bzw. ARGM einteilen. Unsere Instanzen sind dabei die Gold Argumente des PropBank Penn Treebank Korpus\\
+wollen die Instanzen in ARG[0-4] bzw. ARGM einteilen. Unsere Instanzen sind dabei die Gold Argumente des PropBank Penn Treebank Korpus.\\
 \\
 \begin{table}
 \centering
@@ -140,6 +144,6 @@ Wir sind auf die Ergebnisse gespannt und hoffen, dass sie die Auswahl der effizi
 
 \section{Literatur}
 \bibliography{lit}{}
-\bibliographystyle{agsm}
+\bibliographystyle{plain}
 
 \end{document}

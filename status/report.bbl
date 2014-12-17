@@ -1,5 +1,10 @@
 \begin{thebibliography}{1}
 
+\bibitem{Palmer}
+Martha Palmer, Daniel Gildea, and Paul Kingsbury.
+\newblock The proposition bank: An annotated corpus of semantic roles.
+\newblock {\em Comput. Linguist.}, 31(1):71--106, March 2005.
+
 \bibitem{svm}
 Sameer Pradhan, Kadri Hacioglu, Valerie Krugler, Wayne Ward, JamesH. Martin,
   and Daniel Jurafsky.
