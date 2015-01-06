@@ -5,6 +5,7 @@
 \usepackage{gantt}
 \usepackage{listings}
 \usepackage{cite}
+\usepackage{hyperref}
 
 \definecolor{airforce}{rgb}{0.36, 0.54, 0.66}
 \definecolor{amber}{rgb}{1.0, 0.75, 0.0}
@@ -63,13 +64,13 @@
 
 \subsection{Daten}
 
-Als Grundlage f\"ur die oben beschriebenen Experimente wird das PropBank-Korpus aus dem Natural Language Toolkit verwendet. Das urspr\"ungliche Korpus von Martha Palmer et al. \cite{Palmer} umfasst eine gr\"o{\ss}ere Anzahl an PropBank-Instanzen, das im NLTK verwendete besteht allerdings nur aus 112.917 S\"atzen. 
-Jedem dieser Sätze wurden seine entsprechenden Argumente durch Annotatoren zugewiesen. Da die meisten S\"atze mindestens zwei Argumente besitzen (Subjekt und direktes Objekt) umfasst PropBank 292.975 annotierte Argumente. Diese Daten dienen als Goldstandard f\"ur die anschlie{\ss}ende Evaluation des Verfahrens.
+Als Grundlage f\"ur die oben beschriebenen Experimente wird das \href{http://www.nltk.org/_modules/nltk/corpus/reader/propbank.html}{PropBank-Korpus} aus dem Natural Language Toolkit verwendet. Das urspr\"ungliche Korpus von Martha Palmer et al. \cite{Palmer} umfasst eine gr\"o{\ss}ere Anzahl an PropBank-Instanzen, das im NLTK verwendete besteht allerdings nur aus 112.917 S\"atzen. 
+Jedem dieser S\"atze wurden seine entsprechenden Argumente durch Annotatoren zugewiesen. Da die meisten S\"atze mindestens zwei Argumente besitzen (Subjekt und direktes Objekt) umfasst PropBank 292.975 annotierte Argumente. Diese Daten dienen als Goldstandard f\"ur die anschlie{\ss}ende Evaluation des Verfahrens.
 
 
 
 \subsection{Tools}
-Zur Datenverarbeitung und Auswertung wird die Programmiersprache Python verwendet in der Version 3.4, um die Feature-Extraktion durchzuf\"uhren. Durch die Wahl von Python, bietet sich das NLTK als Ressource f\"ur Sprachverarbeitung an, entsprechend in der Version 3.0.0. Als Machine Learning Tool mit dem die unten aufgef\"uhrten
+Zur Datenverarbeitung und Auswertung wird die Programmiersprache Python verwendet in der Version 3.4, um die Feature-Extraktion durchzuf\"uhren. Durch die Wahl von Python bietet sich das NLTK als Ressource f\"ur Sprachverarbeitung an, entsprechend in der Version 3.0.0. Als Machine Learning Tool, mit dem die unten aufgef\"uhrten
 Algorithmen verwendet werden, wird Weka 3.7.11 eingesetzt.
 
 \subsection{Algorithmen}
@@ -80,14 +81,14 @@ verglichen um festzustellen, welcher Klassifizierer das beste Ergebnis erzielt.
 \subsection{Vergleichsgrundlagen}
 Um einen Vergleich der Algorithmen ziehen zu k\"onnen, werden verschiedene Vergleichsgrundlagen verwendet. Die Daten aus dem PropBank-Korpus werden zun\"achst in Trainings-, Test- und 
 Entwicklungsset aufgeteilt. Da diese bereits annotiert wurden, dienen sie somit als Goldstandard, der zur Berechnung von Precision, Recall und F1-Measure verwendet wird unter Verwendung
-der verschiedenen Klassifizierer. Zus\"atzlich k\"onnen die Ergebnisse aus dem Paper \textit{Support Vector Learning for Semantic Argument Classiﬁcation} von Pradhan et al. mit denen des SVM-Klassifkator verglichen werden.
+der verschiedenen Klassifizierer. Zus\"atzlich k\"onnen die Ergebnisse aus dem Paper \textit{Support Vector Learning for Semantic Argument Classiﬁcation} von Pradhan et al. mit denen des SVM-Klassifkators verglichen werden.
 
 
 \section{Hauptteil}
 \subsection{Zielsetzung}
 
 Unser Ziel ist es Verbargumenten ihre semantischen Rollen zuzuweisen. Wir orientieren uns am PropBank Annotationsschema und
-wollen die Instanzen in ARG[0-4] bzw. ARGM einteilen. Unsere Instanzen sind dabei die Gold Argumente des PropBank Penn Treebank Korpus.\\
+wollen die Instanzen in die sechs Klassen ARG[0-4] bzw. ARGM einteilen. Unsere Instanzen sind dabei die Gold Argumente des PropBank Penn Treebank Korpus.\\
 \\
 \begin{table}
 \centering
@@ -131,7 +132,7 @@ for pbInstance in pbInstances :
 \item headword : nominal
 \item subcategorization : nominal
 \end{itemize}
-siehe Support Vector Learning for Semantic Argument Classiﬁcation\cite{svm}
+siehe \cite{svm}
 
 \subsection{Evaluation}
 Um die Effizienz und Pr\"azision der angewandten Methoden zu ermitteln, erfolgt im Anschluss zu Feature-Extraktion und Experimenten eine Evaluation in zwei Stufen.\\
