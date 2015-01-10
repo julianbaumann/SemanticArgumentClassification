@@ -1,0 +1,46 @@
+Semantic Argument Classification - Presentation Outline
+
+Titelseite
+Gliederung
+
+Aufgabenbeschreibung
+	anhand eines Beispielsatzes
+Anwendungsbereiche
+	"warum ist das wichtig?"
+
+Daten
+	NLTK, PropBank (Groesse, Anzahl der Instanzen etc.)
+	Weka dieselben Daten in ARFF
+Erlaeuterung: PropBank in NLTK
+	ARG0-4 und ARGM erlaeutern
+	und wie dies in NLTK vorliegt
+Problemstellung: PropBank in NLTK
+	Loesung war Uni-Server hat alles
+
+Algorithmen
+	SVM
+		wegen der Vergleichsgrundlage
+	NaiveBayes
+		weil Standard und einfach (Baseline)
+	J48
+		wegen des Prunings
+
+Umsetzung
+	Uebersicht der Schritte
+Features
+	die Features mit Beispielen nennen
+	wenn uns, was gutes einfaellt sogar ohne keiner Begruendung
+Feature Extraction
+	Pseudocode-maessig erlaeutern
+
+Evaluation
+	Precision, Recall, F1-Measure und Accuracy anhand der in PropBank enthaltenen Gold-Annotierung
+	und einbringen, dass PropBank toll ist, da nicht mehr manuell annotiert werden muss
+
+Experimente
+	Erwartungen aus DEM Paper ziehen
+	
+Ausblick
+	?
+	
+Fragen und Dank
