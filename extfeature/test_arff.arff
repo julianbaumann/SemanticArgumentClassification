@@ -1,0 +1,34 @@
+@relation SemanticArgumentClassification
+
+@attribute phraseType {NP-SBJ,MD,NP,PP-CLR,NP-TMP,NN,*CHAIN*,NP-PRD,ADVP-TMP,S-CLR,-NONE-}
+@attribute class {ARG0,ARGM-MOD,ARG1,ARGM-PRD,ARGM-TMP,ARG2,ARG2-PNC,ARG2-to}
+@attribute predicate {join,publishing,named,used,make,caused,exposed,reported,enters,causing}
+@attribute path {"(NP-SBJ (NNP Pierre)(NNP Vinken))(, ,)(CD 61)(NNS years))(JJ old))(, ,))","(MD will)","(DT the)(NN board))","(IN as)(DT a)(JJ nonexecutive)(NN director)))","(NNP Nov.)(CD 29))","(NN group)","(*CHAIN* (NP-SBJ-1 (NNP Rudolph)(NNP Agnew))(, ,)(UCP (CD 55)(NNS years))(JJ old))(CC and)(NP (JJ former)(NN chairman))(PP (IN of)(NNP Consolidated)(NNP Gold)(NNP Fields)(NNP PLC)))))(, ,))(-NONE- *-1))","(NP-PRD (DT a)(JJ nonexecutive)(NN director))(PP (IN of)(DT this)(JJ British)(JJ industrial)(NN conglomerate))))","(RB once))","(*CHAIN* (DT A)(NN form))(IN of)(NN asbestos))))(-NONE- *))","(S-CLR (-NONE- *))(VP (TO to)(VB make)(NNP Kent)(NN cigarette)(NNS filters)))))","(-NONE- *)","(NNP Kent)(NN cigarette)(NNS filters))","(NP-SBJ (DT A)(NN form))(IN of)(NN asbestos))))(RRC (RB once))(VP (VBN used)(-NONE- *))(S-CLR (-NONE- *))(VP (TO to)(VB make)(NNP Kent)(NN cigarette)(NNS filters))))))))","(NP (DT a)(JJ high)(NN percentage))(IN of)(NN cancer)(NNS deaths)))(PP-LOC (IN among)(NP (DT a)(NN group))(PP (IN of)(NP (NNS workers))(RRC (VP (VBN exposed)(-NONE- *))(TO to)(PRP it)))(ADVP-TMP (RBR more)(IN than)(CD 30))(NNS years))(IN ago)))))))))","(TO to)(PRP it)))","(ADVP-TMP (RBR more)(IN than)(CD 30))(NNS years))(IN ago))","(*CHAIN* (DT a)(NN group))(IN of)(NNS workers)))(-NONE- *))","(NNS researchers))","(*CHAIN* (S-TPC-1 (NP-SBJ (DT A)(NN form))(IN of)(NN asbestos))))(RRC (RB once))(VP (VBN used)(-NONE- *))(S-CLR (-NONE- *))(VP (TO to)(VP (VB make)(NNP Kent)(NN cigarette)(NNS filters))))))))(VP (VBZ has)(VP (VBN caused)(NP (DT a)(JJ high)(NN percentage))(IN of)(NN cancer)(NNS deaths)))(PP-LOC (IN among)(NP (DT a)(NN group))(PP (IN of)(NP (NNS workers))(RRC (VP (VBN exposed)(-NONE- *))(TO to)(PRP it)))(ADVP-TMP (NP (RBR more)(IN than)(CD 30))(NNS years))(IN ago))))))))))))(-NONE- *T*-1))","(PRP it))","(DT the)(NNS lungs))","(NP-SBJ (RB even)(JJ brief)(NNS exposures))(TO to)(PRP it))))","(NP (NNS symptoms))(SBAR (WDT that))(S (-NONE- *T*-1))(VP (VBP show)(RP up))(NNS decades))(JJ later))))))"}
+@attribute voice {a,p}
+@attribute position {before,after}
+
+@data
+NP-SBJ,ARG0,join,"(NP-SBJ (NNP Pierre)(NNP Vinken))(, ,)(CD 61)(NNS years))(JJ old))(, ,))",a,before
+MD,ARGM-MOD,join,"(MD will)",a,before
+NP,ARG1,join,"(DT the)(NN board))",a,after
+PP-CLR,ARGM-PRD,join,"(IN as)(DT a)(JJ nonexecutive)(NN director)))",a,after
+NP-TMP,ARGM-TMP,join,"(NNP Nov.)(CD 29))",a,after
+NN,ARG0,publishing,"(NN group)",a,after
+*CHAIN*,ARG1,named,"(*CHAIN* (NP-SBJ-1 (NNP Rudolph)(NNP Agnew))(, ,)(UCP (CD 55)(NNS years))(JJ old))(CC and)(NP (JJ former)(NN chairman))(PP (IN of)(NNP Consolidated)(NNP Gold)(NNP Fields)(NNP PLC)))))(, ,))(-NONE- *-1))",p,before
+NP-PRD,ARG2,named,"(NP-PRD (DT a)(JJ nonexecutive)(NN director))(PP (IN of)(DT this)(JJ British)(JJ industrial)(NN conglomerate))))",p,after
+ADVP-TMP,ARGM-TMP,used,"(RB once))",p,before
+*CHAIN*,ARG1,used,"(*CHAIN* (DT A)(NN form))(IN of)(NN asbestos))))(-NONE- *))",p,before
+S-CLR,ARG2-PNC,used,"(S-CLR (-NONE- *))(VP (TO to)(VB make)(NNP Kent)(NN cigarette)(NNS filters)))))",p,after
+-NONE-,ARG0,make,"(-NONE- *)",a,before
+NP,ARG1,make,"(NNP Kent)(NN cigarette)(NNS filters))",a,after
+NP-SBJ,ARG0,caused,"(NP-SBJ (DT A)(NN form))(IN of)(NN asbestos))))(RRC (RB once))(VP (VBN used)(-NONE- *))(S-CLR (-NONE- *))(VP (TO to)(VB make)(NNP Kent)(NN cigarette)(NNS filters))))))))",a,before
+NP,ARG1,caused,"(NP (DT a)(JJ high)(NN percentage))(IN of)(NN cancer)(NNS deaths)))(PP-LOC (IN among)(NP (DT a)(NN group))(PP (IN of)(NP (NNS workers))(RRC (VP (VBN exposed)(-NONE- *))(TO to)(PRP it)))(ADVP-TMP (RBR more)(IN than)(CD 30))(NNS years))(IN ago)))))))))",a,after
+PP-CLR,ARG2-to,exposed,"(TO to)(PRP it)))",p,after
+ADVP-TMP,ARGM-TMP,exposed,"(ADVP-TMP (RBR more)(IN than)(CD 30))(NNS years))(IN ago))",p,after
+*CHAIN*,ARG1,exposed,"(*CHAIN* (DT a)(NN group))(IN of)(NNS workers)))(-NONE- *))",p,before
+NP-SBJ,ARG0,reported,"(NNS researchers))",a,before
+*CHAIN*,ARG1,reported,"(*CHAIN* (S-TPC-1 (NP-SBJ (DT A)(NN form))(IN of)(NN asbestos))))(RRC (RB once))(VP (VBN used)(-NONE- *))(S-CLR (-NONE- *))(VP (TO to)(VP (VB make)(NNP Kent)(NN cigarette)(NNS filters))))))))(VP (VBZ has)(VP (VBN caused)(NP (DT a)(JJ high)(NN percentage))(IN of)(NN cancer)(NNS deaths)))(PP-LOC (IN among)(NP (DT a)(NN group))(PP (IN of)(NP (NNS workers))(RRC (VP (VBN exposed)(-NONE- *))(TO to)(PRP it)))(ADVP-TMP (NP (RBR more)(IN than)(CD 30))(NNS years))(IN ago))))))))))))(-NONE- *T*-1))",a,before
+NP-SBJ,ARG0,enters,"(PRP it))",a,before
+NP,ARG1,enters,"(DT the)(NNS lungs))",a,after
+NP-SBJ,ARG0,causing,"(NP-SBJ (RB even)(JJ brief)(NNS exposures))(TO to)(PRP it))))",a,before
+NP,ARG1,causing,"(NP (NNS symptoms))(SBAR (WDT that))(S (-NONE- *T*-1))(VP (VBP show)(RP up))(NNS decades))(JJ later))))))",a,after
