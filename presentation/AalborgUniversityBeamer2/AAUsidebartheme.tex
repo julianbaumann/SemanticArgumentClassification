@@ -1,0 +1,123 @@
+\documentclass[10pt]{beamer}
+\usepackage{graphicx}
+\usepackage[german]{babel}
+\usetheme[left]{AAUsidebar}
+
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+\usepackage{helvet}
+
+% colored hyperlinks
+\newcommand{\chref}[2]{%
+  \href{#1}{{\usebeamercolor[bg]{AAUsidebar}#2}}%
+}
+
+\title[Semantic Argument Classification]% optional, use only with long paper titles
+{Semantic Argument Classification}
+
+%\subtitle{v.\ 1.3.0}  % could also be a conference name
+
+\date{28. Januar 2015}
+
+\author[Julian Baumann, Kevin Decker, Maximilian Müller-Eberstein] % optional, use only with lots of authors
+{
+    Julian Baumann, Kevin Decker, Maximilian Müller-Eberstein
+  %email adress
+  %\href{mailto:jkn@es.aau.dk}{{\tt jkn@es.aau.dk}}
+}
+% - Give the names in the same order as they appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation. See the beamer manual for an example
+
+\institute[
+%  {\includegraphics[scale=0.2]{aau_segl}}\\ %insert a company, department or university logo
+  Institut für Computerlinguistik\\
+  Ruprecht-Karls-Universität Heidelberg\\
+  
+] % optional - is placed in the bottom of the sidebar on every slide
+{% is placed on the title page
+  Institut für Computerlinguistik\\
+  Universität Heidelberg\\
+
+  %there must be an empty line above this line - otherwise some unwanted space is added between the university and the country (I do not know why;( )
+}
+
+
+% specify a logo on the titlepage (you can specify additional logos an include them in 
+% institute command below
+%\pgfdeclareimage[height=1.5cm]{titlepagelogo}{uniHeidelberg} % placed on the title page
+%\pgfdeclareimage[height=1.5cm]{titlepagelogo2}{graphics/aau_logo_new} % placed on the title page
+\titlegraphic{% is placed on the bottom of the title page
+  \includegraphics[height=1.5cm]{AAUgraphics/uniHeidelberg}
+%  \hspace{1cm}\pgfuseimage{titlepagelogo2}
+}
+
+
+\begin{document}
+% the titlepage
+{\aauwavesbg%
+\begin{frame}[plain,noframenumbering] % the plain option removes the sidebar and header from the title page
+  \titlepage
+\end{frame}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TOC
+\begin{frame}{Gliederung}{}
+\tableofcontents
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Problemstellung}
+% motivation for creating this theme
+\begin{frame}{Semantic Argument Classification}{}
+  \textbf{Was ist Semantic Argument Classifcation?}
+  \vspace{5}
+  \begin{itemize}
+    \item<1-> Zuweisung bestimmter Rollen in einem Satz \rightarrow $\glqq{}Wer tut wem was an?\grqq{}$
+    \item<2-> It operates stores mostly in Iowa and Nebraska
+    \item<3-> $[$_{\textbf{Arg0}} It][_{\textbf{Pred}} operates][_{\textbf{Arg1}} stores] [_{\textbf{ArgLoc}} mostly\ in\ Iowa\ and\\ Nebraska$]$
+  \end{itemize}
+   
+\end{frame}
+
+\subsection{Anwendungsbereich}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Daten}
+\begin{frame}{Daten}
+  \begin{itemize}
+   \item NLTK
+   \item PropBank
+  \end{itemize}
+
+\end{frame}
+
+\subsection{Aufbau}
+\subsection{Problemstellung}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Algorithmen}
+\subsection{SVM}
+\subsection{NaiveBayes}
+\subsection{J48}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Umsetzung}
+\subsection{Übersicht}
+\subsection{Features}
+\subsection{Featureextraktion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Evaluation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Ausblick}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Literatur}
+
+{\aauwavesbg
+\begin{frame}[plain,noframenumbering]
+  \finalpage{Vielen Dank für Eure Aufmerksamkeit! \\ Noch Fragen?}
+\end{frame}}
+%%%%%%%%%%%%%%%%
+
+\end{document}

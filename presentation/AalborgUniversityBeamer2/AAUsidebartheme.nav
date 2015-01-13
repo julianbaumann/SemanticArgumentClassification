@@ -1,0 +1,43 @@
+\beamer@endinputifotherversion {3.24pt}
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\sectionentry {1}{Problemstellung}{3}{Problemstellung}{0}}
+\headcommand {\beamer@sectionpages {1}{2}}
+\headcommand {\beamer@subsectionpages {1}{2}}
+\headcommand {\slideentry {1}{0}{3}{3/5}{}{0}}
+\headcommand {\beamer@framepages {3}{5}}
+\headcommand {\beamer@subsectionentry {0}{1}{1}{6}{Anwendungsbereich}}\headcommand {\beamer@subsectionpages {3}{5}}
+\headcommand {\sectionentry {2}{Daten}{6}{Daten}{0}}
+\headcommand {\beamer@sectionpages {3}{5}}
+\headcommand {\beamer@subsectionpages {6}{5}}
+\headcommand {\slideentry {2}{0}{1}{6/6}{}{0}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{7}{Aufbau}}\headcommand {\beamer@subsectionpages {6}{6}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{7}{Problemstellung}}\headcommand {\beamer@subsectionpages {7}{6}}
+\headcommand {\sectionentry {3}{Algorithmen}{7}{Algorithmen}{0}}
+\headcommand {\beamer@sectionpages {6}{6}}
+\headcommand {\beamer@subsectionpages {7}{6}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{7}{SVM}}\headcommand {\beamer@subsectionpages {7}{6}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{7}{NaiveBayes}}\headcommand {\beamer@subsectionpages {7}{6}}
+\headcommand {\beamer@subsectionentry {0}{3}{3}{7}{J48}}\headcommand {\beamer@subsectionpages {7}{6}}
+\headcommand {\sectionentry {4}{Umsetzung}{7}{Umsetzung}{0}}
+\headcommand {\beamer@sectionpages {7}{6}}
+\headcommand {\beamer@subsectionpages {7}{6}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{7}{\IeC {\"U}bersicht}}\headcommand {\beamer@subsectionpages {7}{6}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{7}{Features}}\headcommand {\beamer@subsectionpages {7}{6}}
+\headcommand {\beamer@subsectionentry {0}{4}{3}{7}{Featureextraktion}}\headcommand {\beamer@subsectionpages {7}{6}}
+\headcommand {\sectionentry {5}{Evaluation}{7}{Evaluation}{0}}
+\headcommand {\beamer@sectionpages {7}{6}}
+\headcommand {\beamer@subsectionpages {7}{6}}
+\headcommand {\sectionentry {6}{Ausblick}{7}{Ausblick}{0}}
+\headcommand {\beamer@sectionpages {7}{6}}
+\headcommand {\beamer@subsectionpages {7}{6}}
+\headcommand {\slideentry {6}{0}{1}{7/7}{}{0}}
+\headcommand {\beamer@framepages {7}{7}}
+\headcommand {\beamer@partpages {1}{7}}
+\headcommand {\beamer@subsectionpages {7}{7}}
+\headcommand {\beamer@sectionpages {7}{7}}
+\headcommand {\beamer@documentpages {7}}
+\headcommand {\def \inserttotalframenumber {3}}

@@ -1,0 +1,17 @@
+\beamer@endinputifotherversion {3.24pt}
+\select@language {german}
+\beamer@sectionintoc {1}{Problemstellung}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Anwendungsbereich}{6}{0}{1}
+\beamer@sectionintoc {2}{Daten}{6}{0}{2}
+\beamer@subsectionintoc {2}{1}{Aufbau}{7}{0}{2}
+\beamer@subsectionintoc {2}{2}{Problemstellung}{7}{0}{2}
+\beamer@sectionintoc {3}{Algorithmen}{7}{0}{3}
+\beamer@subsectionintoc {3}{1}{SVM}{7}{0}{3}
+\beamer@subsectionintoc {3}{2}{NaiveBayes}{7}{0}{3}
+\beamer@subsectionintoc {3}{3}{J48}{7}{0}{3}
+\beamer@sectionintoc {4}{Umsetzung}{7}{0}{4}
+\beamer@subsectionintoc {4}{1}{\IeC {\"U}bersicht}{7}{0}{4}
+\beamer@subsectionintoc {4}{2}{Features}{7}{0}{4}
+\beamer@subsectionintoc {4}{3}{Featureextraktion}{7}{0}{4}
+\beamer@sectionintoc {5}{Evaluation}{7}{0}{5}
+\beamer@sectionintoc {6}{Ausblick}{7}{0}{6}
