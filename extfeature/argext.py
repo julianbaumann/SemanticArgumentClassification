@@ -52,7 +52,7 @@ class ARGInstanceBuilder :
 				# PropChainTreePointer and PropSplitTreePointer don't have wordnums and must be traversed
 				elif (type(arg[0]) is PropbankChainTreePointer) or (type(arg[0]) is PropbankSplitTreePointer) :
 					arg_pieces = arg[0].pieces
-					# traverse the tree (always take the first subtree) until a PropbankTreePointer is found
+					# traverse the tree (always take the left-most subtree) until a PropbankTreePointer is found
 					while type(arg_pieces[0]) is not PropbankTreePointer :
 						arg_pieces = arg_pieces[0].pieces
 					# then get the wordnum
@@ -66,16 +66,15 @@ class ARGInstanceBuilder :
 					argfeatures['voice'] = 'active'
 				elif _pbi.inflection.voice == 'p' :
 					argfeatures['voice'] = 'passive'
+			if 'class' in self.features :
+				argfeatures['class'] = arg[1]
+				argfeatures['class'] = re.sub(r'(ARG[0-5])\-\w+', r'\1', arg[1])
 			# if 'headword' in features :
 				# headword
 				# not sure if annotated in PropBank
 			# if 'subcategorization' in features :
 				# the parent node of the predicate (e.g. [VP] -> VBD -> 'rose')
 				# is this a necessary feature?
-			if 'class' in self.features :
-				argfeatures['class'] = arg[1]
-				# ISSUE : should ARG details be retained?
-				# -> ARG0-5 no details, ARGM as is
 			res.append(ARGInstance(argfeatures))
 		return res
 
