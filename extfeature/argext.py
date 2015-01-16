@@ -13,6 +13,7 @@
 
 from nltk.corpus import propbank
 from nltk.corpus.reader import PropbankTreePointer, PropbankChainTreePointer, PropbankSplitTreePointer
+from nltk.tree import ParentedTree
 import re
 
 class ARGInstanceBuilder :
@@ -35,12 +36,41 @@ class ARGInstanceBuilder :
 			if 'predicate' in self.features :
 				argfeatures['predicate'] = _pbi.predicate.select(_pbi.tree).leaves()[0]
 			if 'path' in self.features :
-				# normalize paths by removing unnecessary newlines and whitespaces
-				argfeatures['path'] = str(arg[0].select(_pbi.tree)).replace('\n','')
-				argfeatures['path'] = re.sub(r'\s*?(\(+\*?[A-Z0-9-,]+\*?\s)+\s*', r'\1', argfeatures['path'])
-				# ISSUE : returns all trees if root is CHAIN or SPLIT
-				# ISSUE : should terminal nodes be kept or only the constituents?
-				# -> ParentedTrees are the answer (start at ARG and PRED and call parent() until they match)
+				
+				senTree = ParentedTree.convert(_pbi.tree)
+				argTree = arg[0].select(senTree)
+				predTree = _pbi.predicate.select(senTree)
+				while argTree.label() == "*CHAIN*" or argTree.label() == "*SPLIT*":					
+					argTree = argTree[0]
+				while predTree.label() == "*CHAIN*" or predTree.label() == "*SPLIT*":					
+					predTree = predTree[0]
+				
+				argParents = []
+				predParents = []
+				while predTree != None:
+					predParents.append(predTree)					
+					predTree = predTree.parent()
+					
+				while argTree!= None:
+					argParents.append(argTree)
+					argTree = argTree.parent()
+					
+				jointNode = None
+				for node in argParents:
+					if node in predParents:
+						jointNode = node
+							
+				stringPath = ""
+				for i in range(0, argParents.index(jointNode), 1):	 
+					node = argParents[i]				
+					stringPath += node.label() + "^"
+				
+				for i in range(predParents.index(jointNode) , 0, -1):
+					node = predParents[i]
+					stringPath+= node.label() + "!"
+				argfeatures['path'] = stringPath[:-1]
+				
+				
 			if 'phraseType' in self.features :
 				argfeatures['phraseType'] = arg[0].select(_pbi.tree).label()
 				# ISSUE : returns CHAIN or SPLIT if it's the root
