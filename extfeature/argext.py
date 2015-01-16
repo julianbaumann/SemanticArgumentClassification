@@ -72,8 +72,11 @@ class ARGInstanceBuilder :
 				
 				
 			if 'phraseType' in self.features :
-				argfeatures['phraseType'] = arg[0].select(_pbi.tree).label()
-				# ISSUE : returns CHAIN or SPLIT if it's the root
+				argTree = arg[0].select(_pbi.tree)
+				while argTree.label() == "*CHAIN*" or argTree.label() == "*SPLIT*":					
+					argTree = argTree[0]
+				argfeatures['phraseType'] = argTree.label()
+				
 			if 'position' in self.features :
 				pred_wordnum = _pbi.predicate.wordnum
 				arg_wordnum = None
