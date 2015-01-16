@@ -37,9 +37,10 @@ class ARGInstanceBuilder :
 			if 'path' in self.features :
 				# normalize paths by removing unnecessary newlines and whitespaces
 				argfeatures['path'] = str(arg[0].select(_pbi.tree)).replace('\n','')
-				argfeatures['path'] = re.sub(r'\s*?(\(\*?[A-Z0-9-,]+\*?\s)+\s*', r'\1', argfeatures['path'])
+				argfeatures['path'] = re.sub(r'\s*?(\(+\*?[A-Z0-9-,]+\*?\s)+\s*', r'\1', argfeatures['path'])
 				# ISSUE : returns all trees if root is CHAIN or SPLIT
 				# ISSUE : should terminal nodes be kept or only the constituents?
+				# -> ParentedTrees are the answer (start at ARG and PRED and call parent() until they match)
 			if 'phraseType' in self.features :
 				argfeatures['phraseType'] = arg[0].select(_pbi.tree).label()
 				# ISSUE : returns CHAIN or SPLIT if it's the root
@@ -60,10 +61,11 @@ class ARGInstanceBuilder :
 					argfeatures['position'] = 'before'
 				else :
 					argfeatures['position'] = 'after'
-				# ISSUE : returns position of only the first tree in CHAIN or SPLIT (although the other tree seems to always be of phrase type NONE)
 			if 'voice' in self.features :
-				argfeatures['voice'] = _pbi.inflection.voice
-				# ISSUE : should voice remain as 'a' and 'p' or converted to 'active' and 'passive'?
+				if _pbi.inflection.voice == 'a' :
+					argfeatures['voice'] = 'active'
+				elif _pbi.inflection.voice == 'p' :
+					argfeatures['voice'] = 'passive'
 			# if 'headword' in features :
 				# headword
 				# not sure if annotated in PropBank
@@ -73,6 +75,7 @@ class ARGInstanceBuilder :
 			if 'class' in self.features :
 				argfeatures['class'] = arg[1]
 				# ISSUE : should ARG details be retained?
+				# -> ARG0-5 no details, ARGM as is
 			res.append(ARGInstance(argfeatures))
 		return res
 
