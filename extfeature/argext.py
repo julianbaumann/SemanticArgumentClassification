@@ -78,7 +78,10 @@ class ARGInstanceBuilder :
 				argfeatures['phraseType'] = argTree.label()
 				
 			if 'position' in self.features :
-				pred_wordnum = _pbi.predicate.wordnum
+				predTreePointer = _pbi.predicate
+				while not type(predTreePointer) is PropbankTreePointer: 
+					predTreePointer = predTreePointer.pieces[0] 
+				pred_wordnum =predTreePointer.wordnum
 				arg_wordnum = None
 				if type(arg[0]) is PropbankTreePointer :
 					arg_wordnum = arg[0].wordnum
@@ -99,9 +102,10 @@ class ARGInstanceBuilder :
 					argfeatures['voice'] = 'active'
 				elif _pbi.inflection.voice == 'p' :
 					argfeatures['voice'] = 'passive'
-			if 'class' in self.features :
-				argfeatures['class'] = arg[1]
-				argfeatures['class'] = re.sub(r'(ARG[0-5])\-\w+', r'\1', arg[1])
+				else:
+					argfeatures['voice'] = 'NONE'
+			if 'class' in self.features :				
+				argfeatures['class'] = arg[1].split("-")[0]
 			# if 'headword' in features :
 				# headword
 				# not sure if annotated in PropBank
