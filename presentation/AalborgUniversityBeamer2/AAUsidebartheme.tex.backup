@@ -1,5 +1,11 @@
 \documentclass[10pt]{beamer}
 \usepackage{graphicx}
+\usepackage[german]{babel}
+\usepackage{qtree}
+\usepackage[style=numeric-verb]{biblatex}
+\bibliographystyle{plain}
+\bibliography{Quellen}
+
 \usetheme[left]{AAUsidebar}
 
 
@@ -62,135 +68,84 @@
 \begin{frame}[plain,noframenumbering] % the plain option removes the sidebar and header from the title page
   \titlepage
 \end{frame}}
-%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TOC
-\begin{frame}{Inhaltsverzeichnis}{}
+\begin{frame}{Gliederung}{}
 \tableofcontents
 \end{frame}
-%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Introduction}
+\section{Problemstellung}
 % motivation for creating this theme
-\begin{frame}{Introduction}{}
-  The present beamer theme called the \alert{AAU Sidebar Beamer Theme} is an attempt to
+\begin{frame}{Semantic Argument Classification}{}
+  \textbf{Was ist Semantic Argument Classifcation?}
+  \vspace{5}
   \begin{itemize}
-    \item<1-> create a simple and elegant beamer theme which can be used by students and researchers affiliated with Aalborg University (AAU),
-    \item<2-> create a unique AAU theme which does not resemble any of the standard beamer themes. People should associate this theme with AAU and not with beamer,
-    \item<3-> keep the amount of clutter to a minimum. Only the important things should be on the slides,
-    \item<4-> retain the powerful customisation tools provided by the template system of the beamer class.
+    \item<1-> Zuweisung bestimmter Rollen in einem Satz \rightarrow $\glqq{}Wer tut wem was an?\grqq{}$
+    \item<2-> It operates stores mostly in Iowa and Nebraska
+    \item<3-> $[$_{\textbf{Arg0}} It][_{\textbf{Pred}} operates][_{\textbf{Arg1}} stores] [_{\textbf{ArgLoc}} mostly\ in\ Iowa\ and\\ Nebraska$]$
   \end{itemize}
+   
 \end{frame}
-%%%%%%%%%%%%%%%%
 
-\subsection{License}
-% the license
-\begin{frame}{Introduction}{License}
+\subsection{Anwendungsbereich}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Daten}
+\begin{frame}{Daten}
   \begin{itemize}
-    \item<1-> The AAU logo is covered by copyright rules. I have used the logo from \chref{http://aau.designguides.dk}{http://aau.designguides.dk}. As long as you use the theme for making presentations in connection with your work at AAU, you are allowed to use the AAU logo.
-    \item<2-> The rest of the theme is provided under the GNU General Public License v. 3 (GPLv3). This basically means that you can redistribute it and/or modify it under the same license. For more information on the GPL license see \chref{http://www.gnu.org/licenses/}{http://www.gnu.org/licenses/}
+   \item NLTK
+   \item PropBank
   \end{itemize}
-\end{frame}
-%%%%%%%%%%%%%%%%
 
-\section{Installation}
-% general installation instructions
-\begin{frame}{Installation}
-  The theme consists of four files
-  \begin{enumerate}
-    \item {\tt beamerthemeAAUsidebar.sty}
-    \item {\tt beamerinnerthemeAAUsidebar.sty}
-    \item {\tt beamerouterthemeAAUsidebar.sty}
-    \item {\tt beamercolorthemeAAUsidebar.sty}
-  \end{enumerate}
-  The theme can either be installed for local or global use.
-  \pause
-  \begin{block}{Local Installation}
-    The simplest way of installing the theme is by placing the four theme files in the same folder as your presentation. When you download the theme, the four theme files are located in the {\tt local} folder.
-  \end{block}
 \end{frame}
 
-% general installation instructions
-\begin{frame}{Installation}
-  \begin{block}{Global Installation}
-  \begin{itemize}
-     \item If you wish to make the theme globally available, you must put the files in your local latex directory tree. The location of the root of the local directory tree depends on the operating system and the latex distribution. On the following slides, you can read the instructions for some common setups.
-    \item When you download the theme, the four theme files are embedded in a directory structure (in the {\tt global} folder) ready to be copied directly to the root of your local directory tree.
-    \item On the following slides, we refer to this directory structure as {\tt <dirstruct>}. \alert{Note} that some parts of the directory may already exist if you have installed other packages in your local latex directory tree. If this is the case, you simply merge {\tt <dirstruct>} with your existing setup.
-  \end{itemize}
-  \end{block}
-\end{frame}
+\subsection{Aufbau}
+\subsection{Problemstellung}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Algorithmen}
+\subsection{SVM}
+\subsection{NaiveBayes}
+\subsection{J48}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Umsetzung}
+\subsection{Übersicht}
+\subsection{Features}
+  \begin{frame}{Features}
+    \begin{itemize}
+     \item Predicate
+     \item Path
+     \item Phrase Type
+    \end{itemize}
+    \Tree [.S [\qroof{The lawyers}.N   ] [.VP [.VBD went ] [.PP to ] [.NP work ] ] ]
+   \end{frame}
+   
+   \begin{frame}{Features}
+   \begin{itemize}
+    \item Position
+    \item Voice
+    \item Head Word
+    \item Sub-categorization
+   \end{itemize}
 
-\subsection{GNU/Linux}
-% installation on GNU/Linux
-\begin{frame}{Installation}{GNU/Linux}
-  \begin{block}{Ubuntu with TeX Live}
-    \begin{enumerate}
-      \item Place the {\tt <dirstruct>} in the root of your local latex directory tree. By default it is\\
-        {\tt \textasciitilde /texmf}\\
-        If the root does not exist, create it. The symbol {\tt \textasciitilde} refers to your home folder, i.e., {\tt /home/<username>}
-      \item In a terminal run\\
-        {\tt \$ texhash \textasciitilde /texmf}
-    \end{enumerate}
-  \end{block}
-\end{frame}
-%%%%%%%%%%%%%%%%
 
-\subsection{Microsoft Windows}
-% installation on Microsoft Windows
-\begin{frame}{Installation}{Microsoft Windows}
-  \begin{block}{Windows with MiKTeX}
-    Apparently, MiKTeX does not include a local latex directory tree by default. Therefore, you first have to create it.
-    \begin{enumerate}
-      \item To do this, create a folder {\tt <somewhere>} named, e.g., {\tt texmf}
-      \item Add this folder in the Roots tab of the MiKTeX Settings dialog
-      \item Place the {\tt <dirstruct>} in your newly created local latex directory tree\\
-    {\tt <somewhere>\textbackslash texmf}\\
-      \item Open the MiKTeX Settings dialog and click Refresh FNDB.
-    \end{enumerate}
-  \end{block}
-\end{frame}
-%%%%%%%%%%%%%%%%
+  \end{frame}
 
-% installation on Microsoft Windows Cont'd
-\begin{frame}{Installation}{Microsoft Windows}
-  \begin{block}{Windows with TeX Live}
-    In the advanced TeX Live Installer, you can manually change the default position of the root of the local latex directory tree. However, we assume the default position below.
-    \begin{enumerate}
-      \item Place the {\tt <dirstruct>} in your local latex directory tree\\
-        {\tt \%USERPROFILE\%\textbackslash texmf}\\
-        If it does not exist, create it. In XP {\tt \%USERPROFILE\%} is\\
-      {\tt c:\textbackslash Document and Settings\textbackslash<username>}\\
-      by default, and in Vista and above it is by default\\
-      {\tt c:\textbackslash Users\textbackslash<username>}
-      \item Open the TeX Live Manager dialog and select 'Update filename database' under 'Actions'.
-    \end{enumerate}
-  \end{block}
-\end{frame}
-%%%%%%%%%%%%%%%%
+\subsection{Featureextraktion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Evaluation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Ausblick}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Literatur}
 
-\subsection{Mac OS X}
-% installation on Mac OS X
-\begin{frame}{Installation}{Mac OS X}
-  \begin{block}{Mac OS X with MacTeX}
-     Place the {\tt <dirstruct>} in the root of your local latex directory tree. By default it is\\
-        {\tt \textasciitilde /Library/texmf}\\
-        If the root does not exist, create it. The symbol {\tt \textasciitilde} refers to your home folder, i.e., {\tt /home/<username>}
-  \end{block}
-\end{frame}
-%%%%%%%%%%%%%%%%
+  \begin{frame}{Quellen}
+    \begin{thebibliography}{20}
+      \bibitem{Pradhan}[So und so]
+     ×
+    \end{thebibliography}
 
-\subsection{Required Packages}
-% list of required packages
-\begin{frame}{Installation}{Required Packages}
-  Of course, you have to have the Beamer class installed. In addition, the theme loads two packages
-  \begin{itemize}
-    \item TikZ\footnote{By the way, TikZ is an awesome package for creating beautiful graphics. If you do not believe me, then have a look at these \chref{http://www.texample.net/tikz/examples/}{online examples} or the \chref{http://tug.ctan.org/tex-archive/graphics/pgf/base/doc/generic/pgf/pgfmanual.pdf}{pgf user manual}. If you want to create beautiful plots, you should use the pgfplots package which is based on TikZ.}
-    \item calc
-  \end{itemize}
-  These packages are very common and should therefore be included in your latex distribution.
-\end{frame}
-%%%%%%%%%%%%%%
+  \end{frame}
 
 {\aauwavesbg
 \begin{frame}[plain,noframenumbering]

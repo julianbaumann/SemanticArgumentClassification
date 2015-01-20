@@ -1,6 +1,11 @@
 \documentclass[10pt]{beamer}
 \usepackage{graphicx}
 \usepackage[german]{babel}
+\usepackage{qtree}
+\usepackage[style=numeric-verb]{biblatex}
+\bibliographystyle{alpha}
+\bibliography{Quellen}
+
 \usetheme[left]{AAUsidebar}
 
 
@@ -95,6 +100,15 @@
 
 \end{frame}
 
+\begin{frame}{PropBank}
+  \begin{itemize}
+   \item Korpus bestehend aus 300.000 Wörtern
+   \item Annotiert 
+  \end{itemize}
+
+\end{frame}
+
+
 \subsection{Aufbau}
 \subsection{Problemstellung}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -106,6 +120,26 @@
 \section{Umsetzung}
 \subsection{Übersicht}
 \subsection{Features}
+  \begin{frame}{Features}
+    \begin{itemize}
+     \item Predicate
+     \item Path
+     \item Phrase Type
+    \end{itemize}
+    \Tree [.S [\qroof{The lawyers}.N   ] [.VP [.VBD went ] [.PP to ] [.NP work ] ] ]
+   \end{frame}
+   
+   \begin{frame}{Features}
+   \begin{itemize}
+    \item Position
+    \item Voice
+    \item Head Word
+    \item Sub-categorization
+   \end{itemize}
+
+
+  \end{frame}
+
 \subsection{Featureextraktion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Evaluation}
@@ -113,6 +147,11 @@
 \section{Ausblick}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Literatur}
+\begin{frame}{Quellen}
+    \renewcommand*{\refname}{Referenzen}
+    \nocite{*} 
+    \printbibliography 
+\end{frame} 
 
 {\aauwavesbg
 \begin{frame}[plain,noframenumbering]

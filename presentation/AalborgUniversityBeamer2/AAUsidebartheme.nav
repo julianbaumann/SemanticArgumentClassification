@@ -1,43 +1,109 @@
+\defcounter {refsection}{0}\relax 
 \beamer@endinputifotherversion {3.24pt}
+\defcounter {refsection}{0}\relax 
 \headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {1}{1}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {2}{2}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\sectionentry {1}{Problemstellung}{3}{Problemstellung}{0}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@sectionpages {1}{2}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@subsectionpages {1}{2}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\slideentry {1}{0}{3}{3/5}{}{0}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {3}{5}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@subsectionentry {0}{1}{1}{6}{Anwendungsbereich}}\headcommand {\beamer@subsectionpages {3}{5}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\sectionentry {2}{Daten}{6}{Daten}{0}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@sectionpages {3}{5}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@subsectionpages {6}{5}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\slideentry {2}{0}{1}{6/6}{}{0}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {6}{6}}
-\headcommand {\beamer@subsectionentry {0}{2}{1}{7}{Aufbau}}\headcommand {\beamer@subsectionpages {6}{6}}
-\headcommand {\beamer@subsectionentry {0}{2}{2}{7}{Problemstellung}}\headcommand {\beamer@subsectionpages {7}{6}}
-\headcommand {\sectionentry {3}{Algorithmen}{7}{Algorithmen}{0}}
-\headcommand {\beamer@sectionpages {6}{6}}
-\headcommand {\beamer@subsectionpages {7}{6}}
-\headcommand {\beamer@subsectionentry {0}{3}{1}{7}{SVM}}\headcommand {\beamer@subsectionpages {7}{6}}
-\headcommand {\beamer@subsectionentry {0}{3}{2}{7}{NaiveBayes}}\headcommand {\beamer@subsectionpages {7}{6}}
-\headcommand {\beamer@subsectionentry {0}{3}{3}{7}{J48}}\headcommand {\beamer@subsectionpages {7}{6}}
-\headcommand {\sectionentry {4}{Umsetzung}{7}{Umsetzung}{0}}
-\headcommand {\beamer@sectionpages {7}{6}}
-\headcommand {\beamer@subsectionpages {7}{6}}
-\headcommand {\beamer@subsectionentry {0}{4}{1}{7}{\IeC {\"U}bersicht}}\headcommand {\beamer@subsectionpages {7}{6}}
-\headcommand {\beamer@subsectionentry {0}{4}{2}{7}{Features}}\headcommand {\beamer@subsectionpages {7}{6}}
-\headcommand {\beamer@subsectionentry {0}{4}{3}{7}{Featureextraktion}}\headcommand {\beamer@subsectionpages {7}{6}}
-\headcommand {\sectionentry {5}{Evaluation}{7}{Evaluation}{0}}
-\headcommand {\beamer@sectionpages {7}{6}}
-\headcommand {\beamer@subsectionpages {7}{6}}
-\headcommand {\sectionentry {6}{Ausblick}{7}{Ausblick}{0}}
-\headcommand {\beamer@sectionpages {7}{6}}
-\headcommand {\beamer@subsectionpages {7}{6}}
-\headcommand {\slideentry {6}{0}{1}{7/7}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {2}{0}{2}{7/7}{}{0}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {7}{7}}
-\headcommand {\beamer@partpages {1}{7}}
-\headcommand {\beamer@subsectionpages {7}{7}}
-\headcommand {\beamer@sectionpages {7}{7}}
-\headcommand {\beamer@documentpages {7}}
-\headcommand {\def \inserttotalframenumber {3}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{2}{1}{8}{Aufbau}}\headcommand {\beamer@subsectionpages {6}{7}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{2}{2}{8}{Problemstellung}}\headcommand {\beamer@subsectionpages {8}{7}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {3}{Algorithmen}{8}{Algorithmen}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {6}{7}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {8}{7}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{3}{1}{8}{SVM}}\headcommand {\beamer@subsectionpages {8}{7}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{3}{2}{8}{NaiveBayes}}\headcommand {\beamer@subsectionpages {8}{7}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{3}{3}{8}{J48}}\headcommand {\beamer@subsectionpages {8}{7}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {4}{Umsetzung}{8}{Umsetzung}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {8}{7}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {8}{7}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{4}{1}{8}{\IeC {\"U}bersicht}}\headcommand {\beamer@subsectionpages {8}{7}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{4}{2}{8}{Features}}\headcommand {\beamer@subsectionpages {8}{7}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {4}{2}{1}{8/8}{Features}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {8}{8}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {4}{2}{2}{9/9}{Features}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {9}{9}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{4}{3}{10}{Featureextraktion}}\headcommand {\beamer@subsectionpages {8}{9}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {5}{Evaluation}{10}{Evaluation}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {8}{9}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {10}{9}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {6}{Ausblick}{10}{Ausblick}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {10}{9}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {10}{9}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {7}{Literatur}{10}{Literatur}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {10}{9}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {10}{9}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {8}{Referenzen}{10}{Referenzen}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {10}{9}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {10}{9}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {8}{0}{1}{10/10}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {10}{10}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {8}{0}{2}{11/11}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\beamer@partpages {1}{11}}
+\headcommand {\beamer@subsectionpages {10}{11}}
+\headcommand {\beamer@sectionpages {10}{11}}
+\headcommand {\beamer@documentpages {11}}
+\headcommand {\def \inserttotalframenumber {7}}
