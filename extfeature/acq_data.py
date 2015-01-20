@@ -22,7 +22,10 @@ if __name__ == '__main__' :
 		if (cnt_inst%20) == 0 :
 			stdout.write("\rextracting ARGInstances...%.2f%%" % (cnt_inst*100/len(pbi)))
 			stdout.flush()
-		arglist += arg_the_builder.get_arginstances(inst) # add extracted ARGInstances from current Propbank Instance to arglist
+		try :
+			arglist += arg_the_builder.get_arginstances(inst) # add extracted ARGInstances from current Propbank Instance to arglist
+		except Error as err :
+			print(err)
 		cnt_inst += 1
 	stdout.write("\rextracting ARGInstances...done\n")
 	stdout.flush()
