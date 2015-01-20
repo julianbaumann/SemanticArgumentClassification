@@ -14,6 +14,7 @@
 from nltk.corpus import propbank
 from nltk.corpus.reader import PropbankTreePointer, PropbankChainTreePointer, PropbankSplitTreePointer
 from nltk.tree import ParentedTree
+from math import floor
 import re
 
 class ARGInstanceBuilder :
@@ -153,8 +154,11 @@ class ARFFDocument :
 	
 	def __str__(self) :
 		'''
-			returns the ARFFDocument in ARFF as str
+			returns the full ARFFDocument in ARFF as str
 		'''
+		return self.get_arff()
+	
+	def get_arff(self, _data_index_lower=0, _data_index_upper=None) :
 		res = ''
 		# relation
 		res += '@relation '
@@ -186,13 +190,15 @@ class ARFFDocument :
 		res += '\n'
 		# data
 		res += '@data\n'
-		for instance in self.data :
+		if _data_index_upper is None :
+			_data_index_upper = len(self.data)
+		for i in range(_data_index_lower, _data_index_upper) :
 			for attribute in self.attributes :
 				# if attribute value contains spaces it must be in quotes (see ARFF specification)
-				if ' ' in instance.get_feature(attribute) :
-					res += '"' + instance.get_feature(attribute) + '"'
+				if ' ' in self.data[i].get_feature(attribute) :
+					res += '"' + self.data[i].get_feature(attribute) + '"'
 				else :
-					res += instance.get_feature(attribute)
+					res += self.data[i].get_feature(attribute)
 				res += ','
 			res = res[:-1] + '\n'
 		# return
@@ -215,3 +221,17 @@ class ARFFDocument :
 				fo.write(str(self))
 		except :
 			print('Error occured while writing ARFFDocument to "' + _file + '"')
+	
+	def write_to_ratio_files(self, _files, _ratios) :
+		if len(_files) == len(_ratios) :
+			data_cursor = 0
+			for i in range(len(_files)) :
+				ratio_index = floor(_ratios[i]*len(self.data))+data_cursor
+				try :
+					with open(_files[i], 'w') as fo :
+						fo.write(self.get_arff(data_cursor, ratio_index))
+				except IOError as err:
+					print('Error occured while writing ARFFDocument to "' + _files[i] + '"')
+				data_cursor = ratio_index
+		else :
+			print('Error : number of files and ratios are not equal')
