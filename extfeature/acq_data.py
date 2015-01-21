@@ -27,9 +27,9 @@ if __name__ == '__main__' :
 			arglist += arg_the_builder.get_arginstances(pbi[i]) # add extracted ARGInstances from current Propbank Instance to arglist
 		except Error as err :
 			print(err)
-	stdout.write("\rextracting ARGInstances...done\n")
+	stdout.write("\rextracting ARGInstances...done   \n")
 	stdout.flush()
-	print('(', len(arglist), 'ARGInstances extracted ) \n')
+	print('(' + str(len(arglist)) + ' ARGInstances extracted from ' + str(pbi_ratio_index) + ' PropBankInstances ) \n')
 	
 	# prepare ARFF
 	print('preparing ARFF...', end='')
@@ -46,5 +46,9 @@ if __name__ == '__main__' :
 	print('writing ARFF to files...', end='')
 	doc.write_to_ratio_files(files, ratios)
 	print('done')
+	print('( saved as :')
+	for file in files :
+		print('\t\'' + file + '\' ')
+	print(')')
 	
 	print('\n- end of program -')
