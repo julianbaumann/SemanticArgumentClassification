@@ -44,6 +44,7 @@ if __name__ == '__main__' :
 	
 	# write ARFFs to files
 	print('writing ARFF to files...', end='')
+	doc.write_to_file(exp_name + '_data_full.arff')
 	doc.write_to_ratio_files(files, ratios)
 	print('done')
 	print('( saved as :')
