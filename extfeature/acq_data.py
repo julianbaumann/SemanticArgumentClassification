@@ -48,8 +48,9 @@ if __name__ == '__main__' :
 	doc.write_to_ratio_files(files, ratios)
 	print('done')
 	print('( saved as :')
+	print('\t\'' + exp_name + '_data_full.arff' + '\'')
 	for file in files :
-		print('\t\'' + file + '\' ')
+		print('\t\'' + file + '\'')
 	print(')')
 	
 	print('\n- end of program -')

@@ -63,27 +63,19 @@ class ARGInstanceBuilder :
 							
 				stringPath = ""
 				for i in range(0, argParents.index(jointNode), 1):	 
-					node = argParents[i]			
-					if node.label().startswith("-"):
-						stringPath += node.label() + "^"
-					else:
-						stringPath += node.label().split("-")[0] + "^"
+					node = argParents[i]
+					stringPath += re.sub(r"(\w+)-.+", r"\1", node.label()) + "^"
 				
 				for i in range(predParents.index(jointNode) , 0, -1):
 					node = predParents[i]
-					stringPath+= node.label().split("-")[0] + "!"
+					stringPath += re.sub(r"(\w+)-.+", r"\1", node.label()) + "!"
 				argfeatures['path'] = stringPath[:-1]
-				
 				
 			if 'phraseType' in self.features :
 				argTree = arg[0].select(_pbi.tree)
 				while argTree.label() == "*CHAIN*" or argTree.label() == "*SPLIT*":					
 					argTree = argTree[0]
-				if argTree.label().startswith("-"):	
-								
-					argfeatures['phraseType'] = argTree.label()
-				else:
-					argfeatures['phraseType'] = argTree.label().split("-")[0]
+				argfeatures['phraseType'] = re.sub(r"(\w+)-.+", r"\1", argTree.label())
 				
 			if 'position' in self.features :
 				predTreePointer = _pbi.predicate
@@ -112,8 +104,9 @@ class ARGInstanceBuilder :
 					argfeatures['voice'] = 'passive'
 				else:
 					argfeatures['voice'] = 'NONE'
-			if 'class' in self.features :				
+			if 'class' in self.features :
 				argfeatures['class'] = arg[1].split("-")[0]
+				# argfeatures['class'] = re.sub(r'(ARG[0-5])\-\w+', r'\1', arg[1])
 			# if 'headword' in features :
 				# headword
 				# not sure if annotated in PropBank
