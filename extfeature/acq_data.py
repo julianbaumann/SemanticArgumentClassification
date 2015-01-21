@@ -10,6 +10,7 @@ if __name__ == '__main__' :
 	exp_name = 'SemanticArgumentClassification'
 	files = [exp_name + '_data_train.arff', exp_name + '_data_dev.arff', exp_name + '_data_test.arff']
 	ratios = [0.6, 0.2, 0.2]
+	pbi_ratio = 1.
 	# init
 	pbi = propbank.instances()
 	featurelist = ['predicate', 'path', 'phraseType', 'position', 'voice', 'class'] # initialize ARGInstanceBuilder with featurelist
@@ -17,16 +18,15 @@ if __name__ == '__main__' :
 	arglist = [] # arglist for the extracted ARGInstances
 
 	# extract ARGInstances
-	cnt_inst = 0.
-	for inst in pbi :
-		if (cnt_inst%20) == 0 :
-			stdout.write("\rextracting ARGInstances...%.2f%%" % (cnt_inst*100/len(pbi)))
+	pbi_ratio_index = floor(len(pbi)*pbi_ratio)
+	for i in range(pbi_ratio_index) :
+		if (i%20) == 0 :
+			stdout.write("\rextracting ARGInstances...%.2f%%" % (i*100/pbi_ratio_index))
 			stdout.flush()
 		try :
-			arglist += arg_the_builder.get_arginstances(inst) # add extracted ARGInstances from current Propbank Instance to arglist
+			arglist += arg_the_builder.get_arginstances(pbi[i]) # add extracted ARGInstances from current Propbank Instance to arglist
 		except Error as err :
 			print(err)
-		cnt_inst += 1
 	stdout.write("\rextracting ARGInstances...done\n")
 	stdout.flush()
 	print('(', len(arglist), 'ARGInstances extracted ) \n')
