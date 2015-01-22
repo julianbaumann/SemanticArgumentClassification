@@ -12,7 +12,7 @@ if __name__ == '__main__' :
 	ratios = [0.6, 0.2, 0.2]
 	pbi_ratio = 1.
 	# init
-	pbi = propbank.instances()
+	pbi = propbank_ptb.instances()
 	featurelist = ['predicate', 'path', 'phraseType', 'position', 'voice', 'class'] # initialize ARGInstanceBuilder with featurelist
 	arg_the_builder = ARGInstanceBuilder(dict.fromkeys(featurelist))
 	arglist = [] # arglist for the extracted ARGInstances
@@ -25,8 +25,8 @@ if __name__ == '__main__' :
 			stdout.flush()
 		try :
 			arglist += arg_the_builder.get_arginstances(pbi[i]) # add extracted ARGInstances from current Propbank Instance to arglist
-		except Error as err :
-			print(err)
+		except :
+			print("Error at PropBankInstance with index : " + str(i))
 	stdout.write("\rextracting ARGInstances...done   \n")
 	stdout.flush()
 	print('(' + str(len(arglist)) + ' ARGInstances extracted from ' + str(pbi_ratio_index) + ' PropBankInstances ) \n')
