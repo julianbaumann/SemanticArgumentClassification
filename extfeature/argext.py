@@ -11,7 +11,7 @@
 		a class that can easily be converted to an ARFF-file
 '''
 
-from nltk.corpus import propbank
+from nltk.corpus import propbank_ptb
 from nltk.corpus.reader import PropbankTreePointer, PropbankChainTreePointer, PropbankSplitTreePointer
 from nltk.tree import ParentedTree
 from nltk.stem import WordNetLemmatizer
