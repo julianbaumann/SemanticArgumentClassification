@@ -14,7 +14,6 @@
 from nltk.corpus import propbank_ptb
 from nltk.corpus.reader import PropbankTreePointer, PropbankChainTreePointer, PropbankSplitTreePointer
 from nltk.tree import ParentedTree
-from nltk.stem import WordNetLemmatizer
 from math import floor
 import re
 
@@ -37,8 +36,9 @@ class ARGInstanceBuilder :
 		for arg in _pbi.arguments :
 			argfeatures = {}
 			if 'predicate' in self.features :
-				argfeatures['predicate'] = self.wnl.lemmatize(_pbi.predicate.select(_pbi.tree).leaves()[0], "v")
-				#argfeatures['predicate'] = _pbi.predicate.select(_pbi.tree).leaves()[0]
+				argfeatures['predicate'] = re.sub(r'(\w+)\..+', r'\1', _pbi.roleset)
+				# argfeatures['predicate'] = self.wnl.lemmatize(_pbi.predicate.select(_pbi.tree).leaves()[0], "v")
+				# argfeatures['predicate'] = _pbi.predicate.select(_pbi.tree).leaves()[0]
 			if 'path' in self.features :
 				
 				senTree = ParentedTree.convert(_pbi.tree)
