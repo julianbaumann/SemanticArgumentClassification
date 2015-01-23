@@ -78,7 +78,7 @@ class ARGInstanceBuilder :
 				argTree = arg[0].select(_pbi.tree)
 				while argTree.label() == "*CHAIN*" or argTree.label() == "*SPLIT*":					
 					argTree = argTree[0]
-				argfeatures['phraseType'] = re.sub(r"(\w+)-.+", r"\1", argTree.label())
+				argfeatures['phraseType'] = re.sub(r"(\w+)[-=$\|].+", r"\1", argTree.label())
 				
 			if 'position' in self.features :
 				predTreePointer = _pbi.predicate

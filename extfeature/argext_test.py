@@ -15,7 +15,7 @@ arglist = []
 
 print('extracting ARGInstances...', end='')
 # test extraction onb the first 10 Propbank Instances
-for i in range(10) :
+for i in range(100) :
 	# add extracted ARGInstances from current Propbank Instance to arglist
 	arglist += arg_the_builder.get_arginstances(pbi[i])
 print('done')
