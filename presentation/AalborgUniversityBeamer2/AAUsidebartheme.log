@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.11)  18 JAN 2015 14:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.11)  23 JAN 2015 13:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1025,7 +1025,7 @@ See the biblatex package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.6 \bibliographystyle{alpha}
+l.7 \bibliographystyle{alpha}
                              
 Use the package option 'style' instead.
 I'm ignoring this command.
@@ -1368,24 +1368,35 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 \@quotelevel=\count333
 \@quotereset=\count334
 (./AAUsidebartheme.aux)
+Runaway argument?
+{ 
+! File ended while scanning use of \@writefile.
+<inserted text> 
+                \par 
+l.67 \begin{document}
+                     
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
+
 \openout1 = `AAUsidebartheme.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 65.
-
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 67.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
@@ -1453,7 +1464,7 @@ e
 ))
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box80
-Package hyperref Info: Link coloring OFF on input line 65.
+Package hyperref Info: Link coloring OFF on input line 67.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1463,56 +1474,56 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count341
 )
-LaTeX Info: Redefining \ref on input line 65.
-LaTeX Info: Redefining \pageref on input line 65.
-LaTeX Info: Redefining \nameref on input line 65.
+LaTeX Info: Redefining \ref on input line 67.
+LaTeX Info: Redefining \pageref on input line 67.
+LaTeX Info: Redefining \nameref on input line 67.
 
 (./AAUsidebartheme.out) (./AAUsidebartheme.out)
 \@outlinefile=\write6
 \openout6 = `AAUsidebartheme.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 65.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 67.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 65.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 67.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 65.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 65.
+(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 67.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 67.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> T1/phv/bx/n on input line 65.
+(Font)                  OT1/cmr/bx/n --> T1/phv/bx/n on input line 67.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/phv/bx/n on input line 65.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 65.
+(Font)                  OT1/cmr/bx/n --> T1/phv/bx/n on input line 67.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 67.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/phv/m/n on input line 65.
+(Font)                  OT1/cmss/m/n --> T1/phv/m/n on input line 67.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/phv/m/n on input line 65.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 65.
+(Font)                  OT1/cmss/bx/n --> T1/phv/m/n on input line 67.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 67.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T1/phv/m/it on input line 65.
+(Font)                  OT1/cmr/m/it --> T1/phv/m/it on input line 67.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T1/phv/m/it on input line 65.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 65.
+(Font)                  OT1/cmr/bx/it --> T1/phv/m/it on input line 67.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 67.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 65.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 67.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 65.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 67.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/phv/m/n --> T1/phv/bx/n on input line 65.
+(Font)                  T1/phv/m/n --> T1/phv/bx/n on input line 67.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/phv/m/it --> T1/phv/bx/it on input line 65.
+(Font)                  T1/phv/m/it --> T1/phv/bx/it on input line 67.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/cmr/bx/n on input line 65.
+(Font)                  OT1/cmss/bx/n --> T1/cmr/bx/n on input line 67.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/phv/bx/n --> T1/phv/bx/n on input line 65.
+(Font)                  T1/phv/bx/n --> T1/phv/bx/n on input line 67.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/phv/m/n --> T1/phv/bx/n on input line 65.
+(Font)                  T1/phv/m/n --> T1/phv/bx/n on input line 67.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/phv/m/it --> T1/phv/bx/it on input line 65.
+(Font)                  T1/phv/m/it --> T1/phv/bx/it on input line 67.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/cmtt/m/n --> T1/cmtt/bx/n on input line 65.
+(Font)                  T1/cmtt/m/n --> T1/cmtt/bx/n on input line 67.
 
 (/usr/share/texmf/tex/latex/beamer/base/translator/dicts/translator-basic-dicti
 onary/translator-basic-dictionary-English.dict
@@ -1538,7 +1549,7 @@ Dictionary: translator-numbers-dictionary, Language: English
 tionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 65.
+LaTeX Info: Redefining \includegraphics on input line 67.
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
@@ -1547,16 +1558,16 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'AAUsidebartheme.bbl' found.
  (./AAUsidebartheme.bbl)
-Package biblatex Info: Reference section=0 on input line 65.
-Package biblatex Info: Reference segment=0 on input line 65.
+Package biblatex Info: Reference section=0 on input line 67.
+Package biblatex Info: Reference segment=0 on input line 67.
 
 (./AAUsidebartheme.nav)
-<AAUgraphics/aau_logo_new_circle.png, id=77, 750.4035pt x 750.8853pt>
+<AAUgraphics/aau_logo_new_circle.png, id=13, 750.4035pt x 750.8853pt>
 File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 65.
+ 67.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
 Package epstopdf Info: Source file: <AAUgraphics/uniHeidelberg.eps>
 (epstopdf)                    date: 2015-01-14 16:15:34
@@ -1567,37 +1578,37 @@ Package epstopdf Info: Source file: <AAUgraphics/uniHeidelberg.eps>
 (epstopdf)                    size: 61484 bytes
 (epstopdf)             Command: <repstopdf --outfile=AAUgraphics/uniHeidelberg-
 eps-converted-to.pdf AAUgraphics/uniHeidelberg.eps>
-(epstopdf)             \includegraphics on input line 70.
+(epstopdf)             \includegraphics on input line 74.
 Package epstopdf Info: Output file is already uptodate.
 
-<AAUgraphics/uniHeidelberg-eps-converted-to.pdf, id=79, 190.7125pt x 100.375pt>
+<AAUgraphics/uniHeidelberg-eps-converted-to.pdf, id=15, 190.7125pt x 100.375pt>
 File: AAUgraphics/uniHeidelberg-eps-converted-to.pdf Graphic file (type pdf)
 <use AAUgraphics/uniHeidelberg-eps-converted-to.pdf>
 Package pdftex.def Info: AAUgraphics/uniHeidelberg-eps-converted-to.pdf used on
- input line 70.
+ input line 74.
 (pdftex.def)             Requested size: 81.09102pt x 42.67912pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 70.
+LaTeX Font Info:    Try loading font information for U+msa on input line 74.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 70.
+LaTeX Font Info:    Try loading font information for U+msb on input line 74.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 70.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 74.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 70.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 74.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <5> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 70.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 74.
 
-<AAUgraphics/aau_waves.pdf, id=80, 845.1575pt x 598.235pt>
+<AAUgraphics/aau_waves.pdf, id=16, 845.1575pt x 598.235pt>
 File: AAUgraphics/aau_waves.pdf Graphic file (type pdf)
 
 <use AAUgraphics/aau_waves.pdf>
-Package pdftex.def Info: AAUgraphics/aau_waves.pdf used on input line 70.
+Package pdftex.def Info: AAUgraphics/aau_waves.pdf used on input line 74.
 (pdftex.def)             Requested size: 364.1973pt x 273.1467pt.
  [1
 
@@ -1605,23 +1616,23 @@ Package pdftex.def Info: AAUgraphics/aau_waves.pdf used on input line 70.
 f, page is rotated 270 degrees> <./AAUgraphics/uniHeidelberg-eps-converted-to.p
 df>] (./AAUsidebartheme.toc)
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <14.4> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 76.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 80.
 File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 76.
+ 80.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [2
 
  <./AAUgraphics/aau_logo_new_circle.png>]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 90.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 92.
 
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    \vskip 
-l.90 \end{frame}
+l.92 \end{frame}
                 
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1633,7 +1644,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.90 \end{frame}
+l.92 \end{frame}
                 
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1641,7 +1652,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.90 \end{frame}
+l.92 \end{frame}
                 
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1652,7 +1663,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.90 \end{frame}
+l.92 \end{frame}
                 
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1664,7 +1675,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.90 \end{frame}
+l.92 \end{frame}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1673,7 +1684,7 @@ or  <return>  to continue without it.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.90 \end{frame}
+l.92 \end{frame}
                 
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1681,7 +1692,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.90 \end{frame}
+l.92 \end{frame}
                 
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1692,7 +1703,7 @@ my insertion and my current dilemma will both disappear.
 ! Extra }, or forgotten \endgroup.
 \par ...m \@noitemerr {\@@par }\fi \else {\@@par }
                                                   \fi 
-l.90 \end{frame}
+l.92 \end{frame}
                 
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1703,7 +1714,7 @@ deleted material, e.g., by typing `I$}'.
 File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 90.
+ 92.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [3
 
@@ -1711,7 +1722,7 @@ Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    \vskip 
-l.90 \end{frame}
+l.92 \end{frame}
                 
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1723,7 +1734,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.90 \end{frame}
+l.92 \end{frame}
                 
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1731,7 +1742,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.90 \end{frame}
+l.92 \end{frame}
                 
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1742,7 +1753,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.90 \end{frame}
+l.92 \end{frame}
                 
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1754,7 +1765,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.90 \end{frame}
+l.92 \end{frame}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1763,7 +1774,7 @@ or  <return>  to continue without it.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.90 \end{frame}
+l.92 \end{frame}
                 
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1771,7 +1782,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.90 \end{frame}
+l.92 \end{frame}
                 
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1782,7 +1793,7 @@ my insertion and my current dilemma will both disappear.
 ! Extra }, or forgotten \endgroup.
 \par ...m \@noitemerr {\@@par }\fi \else {\@@par }
                                                   \fi 
-l.90 \end{frame}
+l.92 \end{frame}
                 
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1793,7 +1804,7 @@ deleted material, e.g., by typing `I$}'.
 File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 90.
+ 92.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [4
 
@@ -1801,7 +1812,7 @@ Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    \vskip 
-l.90 \end{frame}
+l.92 \end{frame}
                 
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1813,7 +1824,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.90 \end{frame}
+l.92 \end{frame}
                 
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1821,7 +1832,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.90 \end{frame}
+l.92 \end{frame}
                 
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1832,7 +1843,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.90 \end{frame}
+l.92 \end{frame}
                 
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1844,7 +1855,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.90 \end{frame}
+l.92 \end{frame}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1853,7 +1864,7 @@ or  <return>  to continue without it.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.90 \end{frame}
+l.92 \end{frame}
                 
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1861,7 +1872,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.90 \end{frame}
+l.92 \end{frame}
                 
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1872,7 +1883,7 @@ my insertion and my current dilemma will both disappear.
 ! Extra }, or forgotten \endgroup.
 \par ...m \@noitemerr {\@@par }\fi \else {\@@par }
                                                   \fi 
-l.90 \end{frame}
+l.92 \end{frame}
                 
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1883,7 +1894,7 @@ deleted material, e.g., by typing `I$}'.
 File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 90.
+ 92.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [5
 
@@ -1892,7 +1903,7 @@ File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 101.
+ 103.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [6
 
@@ -1901,36 +1912,173 @@ File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 109.
+ 116.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [7
 
 ]
-File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
+! Missing $ inserted.
+<inserted text> 
+                $
+l.128 \end{frame}
+                 
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 128.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 128.
+! Missing $ inserted.
+<inserted text> 
+                $
+l.128 \end{frame}
+                 
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.128 \end{frame}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Extra }, or forgotten \endgroup.
+\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
+                                                  \fi 
+l.128 \end{frame}
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 130.
+ 128.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [8
 
 ]
+<ptb_example.png, id=182, 687.56876pt x 482.80376pt>
+File: ptb_example.png Graphic file (type png)
+ <use ptb_example.png>
+Package pdftex.def Info: ptb_example.png used on input line 134.
+(pdftex.def)             Requested size: 206.27222pt x 144.84224pt.
 File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 141.
+ 134.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [9
+
+ <./ptb_example.png>]
+File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
+
+<use AAUgraphics/aau_logo_new_circle.png>
+Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
+ 151.
+(pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
+ [10
 
 ]
 File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 154.
+ 159.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
- [10
+ [11
+
+]
+File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
+
+<use AAUgraphics/aau_logo_new_circle.png>
+Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
+ 171.
+(pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
+ [12
+
+]
+File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
+
+<use AAUgraphics/aau_logo_new_circle.png>
+Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
+ 179.
+(pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
+ [13
+
+]
+File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
+
+<use AAUgraphics/aau_logo_new_circle.png>
+Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
+ 187.
+(pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
+ [14
+
+]
+File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
+
+<use AAUgraphics/aau_logo_new_circle.png>
+Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
+ 195.
+(pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
+ [15
+
+]
+! Undefined control sequence.
+<recently read> \lstinputlisting 
+                                 
+l.218 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
+<use AAUgraphics/aau_logo_new_circle.png>
+Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
+ 218.
+(pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
+ [16
+
+]
+<arff.png, id=332, 1239.63126pt x 642.4pt>
+File: arff.png Graphic file (type png)
+ <use arff.png>
+Package pdftex.def Info: arff.png used on input line 225.
+(pdftex.def)             Requested size: 371.89224pt x 192.72148pt.
+
+Overfull \hbox (93.05511pt too wide) in paragraph at lines 225--225
+ [] 
+ []
+
+File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
+<use AAUgraphics/aau_logo_new_circle.png>
+Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
+ 225.
+(pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
+ [17
+
+ <./arff.png>]
+File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
+
+<use AAUgraphics/aau_logo_new_circle.png>
+Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
+ 242.
+(pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
+ [18
 
 ]
 Package epstopdf Info: Source file: <AAUgraphics/uniHeidelberg.eps>
@@ -1942,20 +2090,20 @@ Package epstopdf Info: Source file: <AAUgraphics/uniHeidelberg.eps>
 (epstopdf)                    size: 61484 bytes
 (epstopdf)             Command: <repstopdf --outfile=AAUgraphics/uniHeidelberg-
 eps-converted-to.pdf AAUgraphics/uniHeidelberg.eps>
-(epstopdf)             \includegraphics on input line 159.
+(epstopdf)             \includegraphics on input line 247.
 Package epstopdf Info: Output file is already uptodate.
 File: AAUgraphics/uniHeidelberg-eps-converted-to.pdf Graphic file (type pdf)
 
 <use AAUgraphics/uniHeidelberg-eps-converted-to.pdf>
 Package pdftex.def Info: AAUgraphics/uniHeidelberg-eps-converted-to.pdf used on
- input line 159.
+ input line 247.
 (pdftex.def)             Requested size: 81.09102pt x 42.67912pt.
 File: AAUgraphics/aau_waves.pdf Graphic file (type pdf)
 
 <use AAUgraphics/aau_waves.pdf>
-Package pdftex.def Info: AAUgraphics/aau_waves.pdf used on input line 159.
+Package pdftex.def Info: AAUgraphics/aau_waves.pdf used on input line 247.
 (pdftex.def)             Requested size: 364.1973pt x 273.1467pt.
- [11
+ [19
 
 ]
 \tf@nav=\write7
@@ -1967,11 +2115,11 @@ Package pdftex.def Info: AAUgraphics/aau_waves.pdf used on input line 159.
 \tf@snm=\write9
 \openout9 = `AAUsidebartheme.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 162.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 162.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 250.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 250.
  (./AAUsidebartheme.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 162.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 162.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 250.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 250.
 
 
 Package rerunfilecheck Warning: File `AAUsidebartheme.out' has changed.
@@ -1979,56 +2127,39 @@ Package rerunfilecheck Warning: File `AAUsidebartheme.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `AAUsidebartheme.out':
-(rerunfilecheck)             Before: AEA504DC260DE40B1110C6C56D0A6A5A;851
-(rerunfilecheck)             After:  25B07C096409D0BDE816B69A775784D4;852.
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
+(rerunfilecheck)             After:  3631B4E195C74A00FDB54962C5FA3DBE;589.
 Package logreq Info: Writing requests to 'AAUsidebartheme.run.xml'.
 \openout1 = `AAUsidebartheme.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 162.
- ) 
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 250.
+ )
+(\end occurred inside a group at level 1)
+
+### simple group (level 1) entered at line 244 ({)
+### bottom level 
 Here is how much of TeX's memory you used:
- 24485 strings out of 494976
- 449498 string characters out of 6179137
- 868682 words of memory out of 5000000
- 27097 multiletter control sequences out of 15000+600000
- 40259 words of font info for 53 fonts, out of 8000000 for 9000
+ 24532 strings out of 494976
+ 450198 string characters out of 6179137
+ 869533 words of memory out of 5000000
+ 27130 multiletter control sequences out of 15000+600000
+ 53962 words of font info for 72 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 53i,21n,64p,946b,1536s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Outline0.4.3.9} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Outline0.4.2.7} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Outline0.4.1.7} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Outline0.3.3.7} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Outline0.3.2.7} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Outline0.3.1.7} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Outline0.2.2.7} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Outline0.2.1.7} has been referenced but does not ex
-ist, replaced by a fixed one
-
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
-/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uh
-vro8a.pfb>
-Output written on AAUsidebartheme.pdf (11 pages, 545264 bytes).
+ 53i,21n,64p,946b,1583s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helv
+etic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a
+.pfb>
+Output written on AAUsidebartheme.pdf (19 pages, 731475 bytes).
 PDF statistics:
- 379 PDF objects out of 1000 (max. 8388607)
- 346 compressed objects within 4 object streams
- 51 named destinations out of 1000 (max. 500000)
- 186 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 428 PDF objects out of 1000 (max. 8388607)
+ 381 compressed objects within 4 object streams
+ 54 named destinations out of 1000 (max. 500000)
+ 68 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -2,9 +2,11 @@
 \usepackage{graphicx}
 \usepackage[german]{babel}
 \usepackage{qtree}
+%\usepackage{listings}
 \usepackage[style=numeric-verb]{biblatex}
 \bibliographystyle{alpha}
 \bibliography{Quellen}
+
 
 \usetheme[left]{AAUsidebar}
 
@@ -63,6 +65,8 @@
 
 
 \begin{document}
+
+%\lstset{language=Python}
 % the titlepage
 {\aauwavesbg%
 \begin{frame}[plain,noframenumbering] % the plain option removes the sidebar and header from the title page
@@ -72,12 +76,11 @@
 
 % TOC
 \begin{frame}{Gliederung}{}
-\tableofcontents
+\small{\tableofcontents}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Problemstellung}
-% motivation for creating this theme
 \begin{frame}{Semantic Argument Classification}{}
   \textbf{Was ist Semantic Argument Classifcation?}
   \vspace{5}
@@ -86,7 +89,6 @@
     \item<2-> It operates stores mostly in Iowa and Nebraska
     \item<3-> $[$_{\textbf{Arg0}} It][_{\textbf{Pred}} operates][_{\textbf{Arg1}} stores] [_{\textbf{ArgLoc}} mostly\ in\ Iowa\ and\\ Nebraska$]$
   \end{itemize}
-   
 \end{frame}
 
 \subsection{Anwendungsbereich}
@@ -102,47 +104,133 @@
 
 \begin{frame}{PropBank}
   \begin{itemize}
-   \item Korpus bestehend aus 300.000 Wörtern
-   \item Annotiert 
+   \item versucht generalisierte Argumente zu verwenden $\rightarrow$ Parser
+   \item Argumentrollen sind für jedes Verb in Frames organisiert $\rightarrow$ weniger spezifisch
+   \item ARG0 = Proto-Agent
+   \item ARG1 = Proto-Patient
+   \item ARG2-ARG5 = Argumente mit steigender Intensität
+   % He(Arg0) wrote(Predicate) a book(Arg1) 
+   % He wrote about them(Arg2) (intensiver, anderer Sense)
+   % He wrote a book for his children (Arg3) weiter entfernt 
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Penn Treebank}
+  \begin{itemize}
+   \item Subkorpus aus WSJ und Brown Corpus, bestehend aus ungefähr 3.478.101 Wörtern
+   \item 112.917 Sätze annotiert nach PropBank-Annotationsschema
+   \item 292.975 Instanzen
+   \item \small wsj/00/wsj_0001.mrg 1 10 gold publish.01 p---a 10:0-rel 11:0-ARG0
+          
   \end{itemize}
 
 \end{frame}
 
+\begin{frame}{Penn Treebank}
+   \begin{figure}[h]
+      \centering \includegraphics[scale=0.3]{ptb_example}
+   \end{figure}
+\end{frame}
 
-\subsection{Aufbau}
 \subsection{Problemstellung}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Algorithmen}
-\subsection{SVM}
-\subsection{NaiveBayes}
-\subsection{J48}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Todo: Bilder für Klassenverteilung und Features einfügen: PhraseType, Postion, Voice
 \section{Umsetzung}
-\subsection{Übersicht}
 \subsection{Features}
   \begin{frame}{Features}
     \begin{itemize}
      \item Predicate
      \item Path
      \item Phrase Type
+     \item Position
+     \item Voice
     \end{itemize}
-    \Tree [.S [\qroof{The lawyers}.N   ] [.VP [.VBD went ] [.PP to ] [.NP work ] ] ]
+    
    \end{frame}
    
-   \begin{frame}{Features}
-   \begin{itemize}
-    \item Position
-    \item Voice
-    \item Head Word
-    \item Sub-categorization
-   \end{itemize}
+  \begin{frame}{Predicate}
+    \begin{itemize}
+     \item lemmatisierte Prädikat
+     \item 197 unique
+     \item 3966 distinct
+    \end{itemize} 
+  \end{frame}
+  
+  \begin{frame}{Path}
+  \begin{itemize}
+   \item beschreibt Pfad zwischen ARG und Predicate 
+   \item vereinfacht z.B. NP-SBJ $\rightarrow$ NP 
+   \item extrahiert über Lowest Common Ancestor 
+   \item beispielsweise: NP$\uparrow$S$\downarrow$VP$\downarrow$VBD
+   \item 41737 distinct
+  \end{itemize}
 
-
+   \Tree [.S [\qroof{The lawyers\\ \textbf{ARG0}}.NP  ] [.VP [.VBD {went\\ \textbf{Predicate}} ] [.PP {to\\ \textbf{Null}} ] [.NP {work\\ \textbf{ARG4}} ] ] ]
   \end{frame}
 
+  \begin{frame}{Phrase Type}
+   \begin{itemize}
+    \item beschreibt die Kategorie des Argument
+    \item z.B: NP, MD, PP, SBAR
+    \item 65 distinct
+   \end{itemize}
+  \end{frame}
+  
+  \begin{frame}{Position}
+   \begin{itemize}
+    \item Beschreibt, ob das Argument vor oder nach dem Prädikat steht
+    \item berechnet mithilfe von WordNum
+    \item 2 distinct
+   \end{itemize}
+  \end{frame}
+  
+  \begin{frame}{Voice}
+   \begin{itemize}
+    \item gibt an, ob das Prädikat aktiv oder passiv ist
+    \item größtenteils annotiert
+    \item 3 distinct: active, passive, unknown
+   \end{itemize}
+  \end{frame}
+  
+%Todo
+%   \begin{frame}{Head Word}
+%   \begin{itemize}
+%    \item 
+%   \end{itemize}
+%   \end{frame}
+
+
 \subsection{Featureextraktion}
+
+\begin{frame}{Featureextraktion}
+  \lstinputlisting{extract.py}
+%   \begin{lstlisting}[frame=lines]
+%   featureList = [...] # zu extrahierende Features
+%   for pbInstance in pbInstances :
+%     for pbArg in pbInstance.arguments :
+% 	features = []
+% 	for feature in featureList :
+% 	  featureList.append(extFeature(feature, pbArg, pbInstance))
+%   # write features to file in ARFF
+%   \end{lstlisting}
+\end{frame}
+
+\begin{frame}{ARFF}
+ \begin{figure}
+    \includegraphics[scale=0.3]{arff}
+ \end{figure}
+
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Schwierigkeiten}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Evaluation}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Ausblick}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -156,7 +244,7 @@
 {\aauwavesbg
 \begin{frame}[plain,noframenumbering]
   \finalpage{Vielen Dank für Eure Aufmerksamkeit! \\ Noch Fragen?}
-\end{frame}}
+\end{frame}
 %%%%%%%%%%%%%%%%
 
 \end{document}
