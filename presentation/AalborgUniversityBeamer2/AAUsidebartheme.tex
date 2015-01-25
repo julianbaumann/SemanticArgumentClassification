@@ -2,10 +2,11 @@
 \usepackage{graphicx}
 \usepackage[german]{babel}
 \usepackage{qtree}
-%\usepackage{listings}
+\usepackage{xcolor}
 \usepackage[style=numeric-verb]{biblatex}
-\bibliographystyle{alpha}
-\bibliography{Quellen}
+\bibliographystyle{plain}
+%\bibliography{Quellen}
+\addbibresource{Quellen.bib}
 
 
 \usetheme[left]{AAUsidebar}
@@ -81,13 +82,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Problemstellung}
+
 \begin{frame}{Semantic Argument Classification}{}
   \textbf{Was ist Semantic Argument Classifcation?}
-  \vspace{5}
+  \vspace{5pt}
+  
   \begin{itemize}
-    \item<1-> Zuweisung bestimmter Rollen in einem Satz \rightarrow $\glqq{}Wer tut wem was an?\grqq{}$
-    \item<2-> It operates stores mostly in Iowa and Nebraska
-    \item<3-> $[$_{\textbf{Arg0}} It][_{\textbf{Pred}} operates][_{\textbf{Arg1}} stores] [_{\textbf{ArgLoc}} mostly\ in\ Iowa\ and\\ Nebraska$]$
+    \item Zuweisung bestimmter Rollen in einem Satz $\Rightarrow$ \\
+    \glqq{}Wer tut wem was an?\grqq{}
+    \item It operates stores mostly in Iowa and Nebraska
+    \item $ [_{\textbf{Arg0}} It][_{\textbf{Pred}} operates][_{\textbf{Arg1}} stores] [_{\textbf{ArgLoc}} mostly\ in\ Iowa\\ \hspace{20pt} and\ Nebraska]$
   \end{itemize}
 \end{frame}
 
@@ -112,25 +116,36 @@
    % He(Arg0) wrote(Predicate) a book(Arg1) 
    % He wrote about them(Arg2) (intensiver, anderer Sense)
    % He wrote a book for his children (Arg3) weiter entfernt 
+   % verschiedene Rollen
   \end{itemize}
 \end{frame}
 
 
 \begin{frame}{Penn Treebank}
   \begin{itemize}
-   \item Subkorpus aus WSJ und Brown Corpus, bestehend aus ungefähr 3.478.101 Wörtern
+   \item Subkorpus aus WSJ und Brown Corpus, bestehend aus ungefähr 3.500.000 Wörtern
    \item 112.917 Sätze annotiert nach PropBank-Annotationsschema
    \item 292.975 Instanzen
-   \item \small wsj/00/wsj_0001.mrg 1 10 gold publish.01 p---a 10:0-rel 11:0-ARG0
+   \item wsj/00/wsj\_0001.mrg 1 10 gold publish.01 p---a 10:0-rel 11:0-ARG0
           
   \end{itemize}
-
+  
 \end{frame}
 
 \begin{frame}{Penn Treebank}
-   \begin{figure}[h]
-      \centering \includegraphics[scale=0.3]{ptb_example}
-   \end{figure}
+((S \\
+\hspace{10pt}   (NP-MNR-SBJ \\
+\hspace{25pt}   (NP (DT The) (NN way) ) \\
+\hspace{25pt} (SBAR \\
+\hspace{40pt}  (WHADVP-1 (-NONE- 0) )\\
+\hspace{40pt}   (S \\
+\hspace{60pt}      (NP-SBJ (NNP MacArthur) )\\
+\hspace{60pt}    (VP (VBD said) \\
+\hspace{80pt}       (NP (PRP his) (NN line) )\\
+\hspace{80pt}      (ADVP-MNR (-NONE- *T*-1) )))))\\
+ (: - -) \\
+    
+
 \end{frame}
 
 \subsection{Problemstellung}
@@ -147,13 +162,18 @@
      \item Position
      \item Voice
     \end{itemize}
+    \begin{figure}
+     	\begin{center}
+    		\includegraphics[scale=0.3]{class}
+    	\end{center}
+    
+    \end{figure}
     
    \end{frame}
    
   \begin{frame}{Predicate}
     \begin{itemize}
      \item lemmatisierte Prädikat
-     \item 197 unique
      \item 3966 distinct
     \end{itemize} 
   \end{frame}
@@ -176,6 +196,12 @@
     \item z.B: NP, MD, PP, SBAR
     \item 65 distinct
    \end{itemize}
+   
+   \begin{figure}
+   	\begin{center}
+   		\includegraphics[scale=0.3]{phraseType}
+   	\end{center}
+   \end{figure}
   \end{frame}
   
   \begin{frame}{Position}
@@ -184,6 +210,12 @@
     \item berechnet mithilfe von WordNum
     \item 2 distinct
    \end{itemize}
+   
+   \begin{figure}
+   	\begin{center}
+   		\includegraphics[scale=0.3]{position}
+   	\end{center}
+   \end{figure}
   \end{frame}
   
   \begin{frame}{Voice}
@@ -192,35 +224,46 @@
     \item größtenteils annotiert
     \item 3 distinct: active, passive, unknown
    \end{itemize}
+  \begin{figure}
+	  \begin{center}
+	  	\includegraphics[scale=0.3]{voice}
+	  \end{center}
+  \end{figure}
   \end{frame}
   
-%Todo
-%   \begin{frame}{Head Word}
-%   \begin{itemize}
-%    \item 
-%   \end{itemize}
-%   \end{frame}
+
 
 
 \subsection{Featureextraktion}
 
-\begin{frame}{Featureextraktion}
-  \lstinputlisting{extract.py}
-%   \begin{lstlisting}[frame=lines]
-%   featureList = [...] # zu extrahierende Features
-%   for pbInstance in pbInstances :
-%     for pbArg in pbInstance.arguments :
-% 	features = []
-% 	for feature in featureList :
-% 	  featureList.append(extFeature(feature, pbArg, pbInstance))
-%   # write features to file in ARFF
-%   \end{lstlisting}
+\begin{frame}{Featureextraktion} 
+\begin{small}
+\hspace{10pt} featureList = $[$...$]$ \textcolor{lightgray}{\# zu extrahierende Features} \\
+\hspace{10pt} for pbInstance in pbInstances : \\
+\hspace{30pt} 	for pbArg in pbInstance.arguments : \\
+\hspace{30pt} 	features = [] \\
+\hspace{30pt} 	for feature in featureList : \\
+\hspace{50pt}	  featureList.append(extFeature(feature, pbArg, pbInstance)) \\
+\hspace{10pt}   	\textcolor{lightgray}{ \# write features to file in ARFF} \\
+\end{small}
 \end{frame}
 
 \begin{frame}{ARFF}
- \begin{figure}
-    \includegraphics[scale=0.3]{arff}
- \end{figure}
+	@relation SAC\_All \\
+	\vspace{5pt}
+	@attribute predicate \{join,publish,name,use, make, cause, ...\} \\
+	@attribute phraseType \{NP, MD, PP, NN, ADVP, S, ...\} \\
+	@attribute position \{before, after\} \\
+	@attribute path \{NP\^{}S!VP!VP, MD\^{}VP\^{}S!VP!VP,...\} \\
+	@attribute voice \{active, passive, NONE\} \\
+	@attribute class \{ARG0, ARGM, ARGA, ARG1, ...\} \\
+	\vspace{10pt}
+	@data \\
+	join, NP, before, NP\^{}S!VP!VP, active, ARG0 \\
+	join, MD, before, MD\^{}VP\^{}S!VP!VP, active, ARGM \\
+	join, NP, after, NP\^{}VP\^{}VP\^{}S!VP!VP, active, ARG1 \\
+	join, PP, after, PP\^{}VP\^{}VP\^{}S!VP!VP, active, ARGM \\
+	join, NP, after, VP\^{}VP\^{}S!VP!VP, active, ARGM \\
 
 \end{frame}
 

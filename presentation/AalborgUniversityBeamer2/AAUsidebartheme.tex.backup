@@ -2,9 +2,11 @@
 \usepackage{graphicx}
 \usepackage[german]{babel}
 \usepackage{qtree}
+%\usepackage{listings}
 \usepackage[style=numeric-verb]{biblatex}
 \bibliographystyle{alpha}
 \bibliography{Quellen}
+
 
 \usetheme[left]{AAUsidebar}
 
@@ -63,6 +65,8 @@
 
 
 \begin{document}
+
+%\lstset{language=Python}
 % the titlepage
 {\aauwavesbg%
 \begin{frame}[plain,noframenumbering] % the plain option removes the sidebar and header from the title page
@@ -108,6 +112,7 @@
    % He(Arg0) wrote(Predicate) a book(Arg1) 
    % He wrote about them(Arg2) (intensiver, anderer Sense)
    % He wrote a book for his children (Arg3) weiter entfernt 
+   % verschiedene Rollen
   \end{itemize}
 \end{frame}
 
@@ -199,8 +204,28 @@
 
 
 \subsection{Featureextraktion}
-%Bild Arff einfügen
-%Pseudocode einfügen
+
+\begin{frame}{Featureextraktion}
+  \lstinputlisting{extract.py}
+%   \begin{lstlisting}[frame=lines]
+%   featureList = [...] # zu extrahierende Features
+%   for pbInstance in pbInstances :
+%     for pbArg in pbInstance.arguments :
+% 	features = []
+% 	for feature in featureList :
+% 	  featureList.append(extFeature(feature, pbArg, pbInstance))
+%   # write features to file in ARFF
+%   \end{lstlisting}
+\end{frame}
+
+\begin{frame}{ARFF}
+ \begin{figure}
+    \includegraphics[scale=0.3]{arff}
+ \end{figure}
+
+\end{frame}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Schwierigkeiten}
