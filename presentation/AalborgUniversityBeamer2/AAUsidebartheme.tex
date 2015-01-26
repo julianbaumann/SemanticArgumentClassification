@@ -239,13 +239,21 @@
 \begin{frame}{Featureextraktion} 
 \begin{small}
 \hspace{10pt} featureList = $[$...$]$ \textcolor{lightgray}{\# zu extrahierende Features} \\
+\hspace{10pt} extArgList = [] \\
 \hspace{10pt} for pbInstance in pbInstances : \\
 \hspace{30pt} 	for pbArg in pbInstance.arguments : \\
-\hspace{30pt} 	features = [] \\
 \hspace{30pt} 	for feature in featureList : \\
-\hspace{50pt}	  featureList.append(extFeature(feature, pbArg, pbInstance)) \\
+\hspace{50pt}	extArgList.append(extFeature(feature, pbArg, pbInstance)) \\
 \hspace{10pt}   	\textcolor{lightgray}{ \# write features to file in ARFF} \\
 \end{small}
+\end{frame}
+
+\begin{frame}{Featureextraktion} 
+  \begin{figure}
+	  \begin{center}
+	  	\includegraphics[scale=0.5]{argext_graphic}
+	  \end{center}
+  \end{figure}
 \end{frame}
 
 \begin{frame}{ARFF}
