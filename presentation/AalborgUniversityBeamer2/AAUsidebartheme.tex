@@ -280,7 +280,64 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Schwierigkeiten}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Evaluation}
+\section{Experimente}
+\begin{frame}{Setup}
+
+\begin{itemize}
+	\item 60\% train,20\% dev, 20\% test
+	\item Baseline: ZeroR
+	\item Naive Bayes, j48 tree, (libSVM)
+	\item bisher: Training auf train, Evaluierung mit dev
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Ergebnisse}
+\begin{table}[h]
+\begin{tabular}{l|lll}
+                  & Precision      & Recall         & F-Measure      \\ \hline
+\textit{Baseline} & \textit{0.132} & \textit{0.364} & \textit{0.194} \\ \hline
+Naive Bayes       & 0.771          & 0.778          & 0.770          \\
+j48 Tree          & ??             & ??             & ??            
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{Feature Evaluation}
+
+\begin{frame}{Confusion Matrix}
+
+\begin{table}[h]
+\begin{tabular}{l|llllllll|l}
+a     b     c     d     e     f     g     h     & a     & b     & c     & d    & e   & f  & g & h & \textless-- classified as \\ \hline
+14497   348   361   272     0     4     0     1 & 14497 & 348   & 361   & 272  & 0   & 4  & 0 & 1 & a = ARG0                  \\
+291 11394  2143  1009   189    48     0     1   & 291   & 11394 & 2143  & 1009 & 189 & 48 & 0 & 1 & b = ARGM                  \\
+3119   707 17064   375    31    27     0     0  & 3119  & 707   & 17064 & 375  & 31  & 27 & 0 & 0 & c = ARG1                  \\
+180   792  1854  2163    29    23     0     0   & 180   & 792   & 1854  & 2163 & 29  & 23 & 0 & 0 & d = ARG2                  \\
+2   217    23   141   379     3     0     0     & 2     & 217   & 23    & 141  & 379 & 3  & 0 & 0 & e = ARG3                  \\
+37   289   144   147   170    99     0     0    & 37    & 289   & 144   & 147  & 170 & 99 & 0 & 0 & f = ARG4                  \\
+0    13     0     1     0     0     3     0     & 0     & 13    & 0     & 1    & 0   & 0  & 3 & 0 & g = ARG5                  \\
+5     0     0     0     0     0     0     0     & 5     & 0     & 0     & 0    & 0   & 0  & 0 & 0 &                          
+\end{tabular}
+\end{table}
+
+\end{frame}
+
+\begin{table}[h]
+\begin{tabular}{l|lll|l}
+                      & Precision      & Recall         & F-Measure      & F-Measure Change \\ \hline
+\textit{All Features} & \textit{0.771} & \textit{0.778} & \textit{0.770} & \textit{0}       \\ \hline
+- voice               & 0.748          & 0.754          & 0.745          & -0.025           \\
+- path                & 0.778          & 0.783          & 0.776          & \textbf{+0.006}  \\
+- phraseType          & 0.735          & 0.747          & 0.733          & -0.037           \\
+- position            & 0.758          & 0.773          & 0.757          & -0.013           \\
+-predicate            & 0.717          & 0.732          & 0.716          & \textbf{-0.54}  
+\end{tabular}
+\end{table}
+
+\end{frame}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Ausblick}
