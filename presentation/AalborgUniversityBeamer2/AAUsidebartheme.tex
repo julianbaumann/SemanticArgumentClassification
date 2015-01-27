@@ -123,8 +123,8 @@
 
 \begin{frame}{Penn Treebank}
   \begin{itemize}
-   \item Subkorpus aus WSJ und Brown Corpus, bestehend aus ungefähr 3.500.000 Wörtern
-   \item 112.917 Sätze annotiert nach PropBank-Annotationsschema
+   \item Subkorpus aus WSJ und Brown Corpus, bestehend aus ungefähr 1.000.000 Wörtern
+   \item 112.917 Prädikat-Argument Strukturen annotiert nach PropBank-Annotationsschema
    \item 292.975 Instanzen
    \item wsj/00/wsj\_0001.mrg 1 10 gold publish.01 p---a 10:0-rel 11:0-ARG0
           
@@ -194,7 +194,7 @@
    \begin{itemize}
     \item beschreibt die Kategorie des Argument
     \item z.B: NP, MD, PP, SBAR
-    \item 65 distinct
+    \item 65 distinct feature values
    \end{itemize}
    
    \begin{figure}
@@ -207,8 +207,7 @@
   \begin{frame}{Position}
    \begin{itemize}
     \item Beschreibt, ob das Argument vor oder nach dem Prädikat steht
-    \item berechnet mithilfe von WordNum
-    \item 2 distinct
+    \item ninäres Feature
    \end{itemize}
    
    \begin{figure}
@@ -222,7 +221,7 @@
    \begin{itemize}
     \item gibt an, ob das Prädikat aktiv oder passiv ist
     \item größtenteils annotiert
-    \item 3 distinct: active, passive, unknown
+    \item 3 distinct feature values: active, passive, unknown
    \end{itemize}
   \begin{figure}
 	  \begin{center}
@@ -286,7 +285,7 @@
 \begin{itemize}
 	\item 60\% train,20\% dev, 20\% test
 	\item Baseline: ZeroR
-	\item Naive Bayes, j48 tree, (libSVM)
+	\item Naive Bayes, j48 tree, \textit{(libSVM)} 
 	\item bisher: Training auf train, Evaluierung mit dev
 \end{itemize}
 
@@ -298,14 +297,14 @@
                   & Precision      & Recall         & F-Measure      \\ \hline
 \textit{Baseline} & \textit{0.132} & \textit{0.364} & \textit{0.194} \\ \hline
 Naive Bayes       & 0.771          & 0.778          & 0.770          \\
-j48 Tree          & ??             & ??             & ??            
+j48 Tree          & 0.784      	   & 0.786             & 0.781            
 \end{tabular}
 \end{table}
 \end{frame}
 
 \begin{frame}{Feature Evaluation}
 
-\begin{frame}{Confusion Matrix}
+\begin{frame}{Confusion Matrix (Naive Bayes)}
 
 \begin{table}[h]
 \begin{tabular}{llllllll|l}
@@ -340,6 +339,17 @@ a     & b     & c     & d    & e   & f  & g & h & \textless-- classified as \\ \
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Ausblick}
+
+\begin{frame}{toDo}
+
+\begin{itemize}
+	\item Path Feature überarbeiten
+	\item HeadWord Feature implementieren
+	\item genauere Evaluation
+	\item \textit{SVM?}
+	\item Abschlussbericht schreiben
+
+\end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Literatur}
 \begin{frame}{Quellen}
