@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.11)  28 JAN 2015 15:16
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.11)  28 JAN 2015 15:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1638,12 +1638,12 @@ Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
 
 ]
 
-LaTeX Warning: Command \texttrademark invalid in math mode on input line 151.
+LaTeX Warning: Command \texttrademark invalid in math mode on input line 152.
 
 File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 151.
+ 152.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [6
 
@@ -1652,7 +1652,7 @@ File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 163.
+ 164.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [7
 
@@ -1660,13 +1660,13 @@ Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
 <class.png, id=207, 407.5225pt x 390.45876pt>
 File: class.png Graphic file (type png)
  <use class.png>
-Package pdftex.def Info: class.png used on input line 171.
+Package pdftex.def Info: class.png used on input line 172.
 (pdftex.def)             Requested size: 203.76074pt x 195.2289pt.
 File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 171.
+ 172.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [8
 
@@ -1675,7 +1675,7 @@ File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 187.
+ 188.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [9
 
@@ -1684,7 +1684,7 @@ File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 203.
+ 204.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [10
 
@@ -1693,7 +1693,7 @@ File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 210.
+ 211.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [11
 
@@ -1702,7 +1702,7 @@ File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 222.
+ 223.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [12
 
@@ -1710,13 +1710,13 @@ Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
 <phraseType.png, id=298, 408.52625pt x 389.455pt>
 File: phraseType.png Graphic file (type png)
  <use phraseType.png>
-Package pdftex.def Info: phraseType.png used on input line 236.
+Package pdftex.def Info: phraseType.png used on input line 237.
 (pdftex.def)             Requested size: 122.55882pt x 116.83739pt.
 File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 236.
+ 237.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [13
 
@@ -1724,13 +1724,13 @@ Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
 <position.png, id=318, 406.51875pt x 391.4625pt>
 File: position.png Graphic file (type png)
  <use position.png>
-Package pdftex.def Info: position.png used on input line 249.
+Package pdftex.def Info: position.png used on input line 250.
 (pdftex.def)             Requested size: 121.95656pt x 117.43965pt.
 File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 249.
+ 250.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [14
 
@@ -1738,13 +1738,13 @@ Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
 <voice.png, id=337, 405.515pt x 392.46625pt>
 File: voice.png Graphic file (type png)
  <use voice.png>
-Package pdftex.def Info: voice.png used on input line 262.
+Package pdftex.def Info: voice.png used on input line 263.
 (pdftex.def)             Requested size: 121.65543pt x 117.74077pt.
 File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 262.
+ 263.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [15
 
@@ -1753,7 +1753,7 @@ File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 279.
+ 280.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [16
 
@@ -1761,21 +1761,21 @@ Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
 <argext_graphic.png, id=374, 1445.4pt x 1084.05pt>
 File: argext_graphic.png Graphic file (type png)
  <use argext_graphic.png>
-Package pdftex.def Info: argext_graphic.png used on input line 287.
+Package pdftex.def Info: argext_graphic.png used on input line 288.
 (pdftex.def)             Requested size: 289.07487pt x 216.80615pt.
 
-Overfull \hbox (10.23775pt too wide) in paragraph at lines 287--287
+Overfull \hbox (10.23775pt too wide) in paragraph at lines 288--288
  [] 
  []
 
 
-Overfull \vbox (19.15953pt too high) detected at line 287
+Overfull \vbox (19.15953pt too high) detected at line 288
  []
 
 File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 287.
+ 288.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [17
 
@@ -1784,7 +1784,7 @@ File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 306.
+ 307.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [18
 
@@ -1793,7 +1793,7 @@ File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 318.
+ 319.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [19
 
@@ -1802,7 +1802,7 @@ File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 332.
+ 333.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [20
 
@@ -1811,31 +1811,31 @@ File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 345.
+ 346.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [21
 
 ]
-Overfull \hbox (17.04274pt too wide) in paragraph at lines 365--365
+Overfull \hbox (17.04274pt too wide) in paragraph at lines 366--366
  [] 
  []
 
 File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 365.
+ 366.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [22
 
 ]
-Overfull \hbox (12.55173pt too wide) in paragraph at lines 385--385
+Overfull \hbox (12.55173pt too wide) in paragraph at lines 386--386
  [] 
  []
 
 File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 385.
+ 386.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [23
 
@@ -1844,7 +1844,7 @@ File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 402.
+ 403.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [24
 
@@ -1853,7 +1853,7 @@ File: AAUgraphics/aau_logo_new_circle.png Graphic file (type png)
 
 <use AAUgraphics/aau_logo_new_circle.png>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.png used on input line
- 409.
+ 410.
 (pdftex.def)             Requested size: 40.49973pt x 40.52542pt.
  [25
 
@@ -1867,18 +1867,18 @@ Package epstopdf Info: Source file: <AAUgraphics/uniHeidelberg.eps>
 (epstopdf)                    size: 61484 bytes
 (epstopdf)             Command: <repstopdf --outfile=AAUgraphics/uniHeidelberg-
 eps-converted-to.pdf AAUgraphics/uniHeidelberg.eps>
-(epstopdf)             \includegraphics on input line 414.
+(epstopdf)             \includegraphics on input line 415.
 Package epstopdf Info: Output file is already uptodate.
 File: AAUgraphics/uniHeidelberg-eps-converted-to.pdf Graphic file (type pdf)
 
 <use AAUgraphics/uniHeidelberg-eps-converted-to.pdf>
 Package pdftex.def Info: AAUgraphics/uniHeidelberg-eps-converted-to.pdf used on
- input line 414.
+ input line 415.
 (pdftex.def)             Requested size: 81.09102pt x 42.67912pt.
 File: AAUgraphics/aau_waves.pdf Graphic file (type pdf)
 
 <use AAUgraphics/aau_waves.pdf>
-Package pdftex.def Info: AAUgraphics/aau_waves.pdf used on input line 414.
+Package pdftex.def Info: AAUgraphics/aau_waves.pdf used on input line 415.
 (pdftex.def)             Requested size: 364.1973pt x 273.1467pt.
  [26
 
@@ -1892,17 +1892,17 @@ Package pdftex.def Info: AAUgraphics/aau_waves.pdf used on input line 414.
 \tf@snm=\write9
 \openout9 = `AAUsidebartheme.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 417.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 417.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 418.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 418.
  (./AAUsidebartheme.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 417.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 417.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 418.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 418.
 Package rerunfilecheck Info: File `AAUsidebartheme.out' has not changed.
 (rerunfilecheck)             Checksum: 5A027E5885A47EC4AAC91538591195A3;585.
 Package logreq Info: Writing requests to 'AAUsidebartheme.run.xml'.
 \openout1 = `AAUsidebartheme.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 417.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 418.
  ) 
 Here is how much of TeX's memory you used:
  24612 strings out of 494976
@@ -1920,7 +1920,7 @@ type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helv
 etic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a
 .pfb>
-Output written on AAUsidebartheme.pdf (26 pages, 684187 bytes).
+Output written on AAUsidebartheme.pdf (26 pages, 684188 bytes).
 PDF statistics:
  589 PDF objects out of 1000 (max. 8388607)
  532 compressed objects within 6 object streams
