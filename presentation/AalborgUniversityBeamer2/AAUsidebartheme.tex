@@ -111,35 +111,60 @@
   \begin{itemize}
    \item versucht generalisierte Argumente zu verwenden $\rightarrow$ Parser
    \item Argumentrollen sind für jedes Verb in Frames organisiert $\rightarrow$ weniger spezifisch
-   \item ARG0 = Proto-Agent
-   \item ARG1 = Proto-Patient
-   \item ARG2-ARG5 = Argumente mit steigender Intensität
-   % He(Arg0) wrote(Predicate) a book(Arg1) 
-   % He wrote about them(Arg2) (intensiver, anderer Sense)
-   % He wrote a book for his children (Arg3) weiter entfernt 
-   % verschiedene Rollen
   \end{itemize}
+  
+	\begin{table}
+	\centering
+	\begin{tabular}{|c|l|}
+	\hline 
+	ARG0 & proto-agent \\ 
+	\hline 
+	ARG1 & proto-patient \\ 
+	\hline 
+	ARG2 & instrument, benefactive, attribute \\ 
+	\hline 
+	ARG3 & starting point, benefactive, attribute \\ 
+	\hline 
+	ARG4 & ending point \\ 
+	\hline 
+	ARGM & modifier \\ 
+	\hline 
+	\end{tabular}
+	\end{table}
+
 \end{frame}
 
 \begin{frame}{PropBank}
+	
 	\begin{itemize}
-		\item $ [_{\textbf{ARG0}}\ He][_{\textbf{Predicate}}\ wrote][_{\textbf{ARG1}}\ a\ book] $ 
-		\item $ [_{\textbf{ARG0}}\ He][_{\textbf{Predicate}}\ wrote][_{\textbf{ARG2}}\ about\ them] $
-		\item $ [_{\textbf{ARG0}}\ He][_{\textbf{Predicate}}\ wrote][_{\textbf{ARG3}}\ a\ book\ for\ his\ children] $
+		
+		\item $ [_{\textbf{ARG0}}\ She][_{\textbf{Predicate}}\ writes][_{\textbf{ARG1}}\ a\ program] $ 
+		\item $ [_{\textbf{ARG0}}\ She][_{\textbf{Predicate}}\ writes][_{\textbf{ARG2}}\ about\ headbands] $
+		\item \scalebox{0.899999}{ $ [_{\textbf{ARG0}}\ She][_{\textbf{Predicate}}\ writes][_{\textbf{ARG1}}\ a\ program][_{\textbf{ARG3}}\ for\ BApple\texttrademark] $}
+		\item $ [_{\textbf{ARGM-TMP}}\ Now][_{\textbf{ARG0}}\ she][_{\textbf{Predicate}}\ writes][_{\textbf{ARG1}}\ a\ program] $ 
 		\item $ \rightarrow $ verschieden Rollen
+		
 	\end{itemize}
 \end{frame}
 
 
 \begin{frame}{Penn Treebank}
   \begin{itemize}
-   \item Subkorpus aus WSJ und Brown Corpus, bestehend aus ungefähr 1.000.000 Wörtern
+   \item Subkorpus aus WSJ, bestehend aus ungefähr 1 Millionen Tokens
    \item 112.917 Prädikat-Argument Strukturen annotiert nach PropBank-Annotationsschema
    \item 292.975 Instanzen
    \item \footnotesize{ wsj/00/wsj\_0001.mrg 1 10 gold publish.01 p---a 10:0-rel 11:0-ARG0}
           
   \end{itemize}
   
+\end{frame}
+
+\begin{frame}{Klassenverteilung}
+	\begin{figure}
+		\begin{centering}
+			\includegraphics[scale=0.5]{class}
+		\end{centering}
+	\end{figure}
 \end{frame}
 
 \begin{frame}{Penn Treebank}
@@ -158,7 +183,6 @@
 
 \end{frame}
 
-\subsection{Problemstellung}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -172,19 +196,13 @@
      \item Position
      \item Voice
     \end{itemize}
-    \begin{figure}
-     	\begin{center}
-    		\includegraphics[scale=0.3]{class}
-    	\end{center}
-    
-    \end{figure}
     
    \end{frame}
    
   \begin{frame}{Predicate}
     \begin{itemize}
      \item lemmatisierte Prädikat
-     \item 3966 distinct
+     \item 3966 distinct feature values
     \end{itemize} 
   \end{frame}
   
@@ -194,7 +212,7 @@
    \item vereinfacht z.B. NP-SBJ $\rightarrow$ NP 
    \item extrahiert über Lowest Common Ancestor 
    \item beispielsweise: NP$\uparrow$S$\downarrow$VP$\downarrow$VBD
-   \item 41737 distinct
+   \item 41737 distinct feature values
   \end{itemize}
 
    \Tree [.S [\qroof{The lawyers\\ \textbf{ARG0}}.NP  ] [.VP [.VBD {went\\ \textbf{Predicate}} ] [.PP {to\\ \textbf{Null}} ] [.NP {work\\ \textbf{ARG4}} ] ] ]
@@ -246,15 +264,15 @@
 \subsection{Featureextraktion}
 
 \begin{frame}{Featureextraktion} 
-\begin{small}
+\begin{footnotesize}
 \hspace{10pt} featureList = $[$...$]$ \textcolor{lightgray}{\# zu extrahierende Features} \\
 \hspace{10pt} extArgList = [] \\
 \hspace{10pt} for pbInstance in pbInstances : \\
 \hspace{30pt} 	for pbArg in pbInstance.arguments : \\
-\hspace{30pt} 	for feature in featureList : \\
-\hspace{50pt}	extArgList.append(extFeature(feature, pbArg, pbInstance)) \\
+\hspace{40pt} 	for feature in featureList : \\
+\hspace{50pt}		extArgList.append(extFeature(feature, pbArg, pbInstance)) \\
 \hspace{10pt}   	\textcolor{lightgray}{ \# write features to file in ARFF} \\
-\end{small}
+\end{footnotesize}
 \end{frame}
 
 \begin{frame}{Featureextraktion} 
@@ -293,22 +311,24 @@
 		\item PropBankChain- und PropBankSplitTreePointer
 		\item Verwendung einer externen PennTreeBank
 		\item einige Feature (bsp. path) nehmen sehr viele Werte an
-		\item Speicherbedarf der Algorithmen J48 und SVM
 	\end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experimente}
+\subsection{Setup}
 \begin{frame}{Setup}
 
 \begin{itemize}
-	\item 60\% train,20\% dev, 20\% test
+	\item 60\% train, 20\% dev, 20\% test
 	\item Baseline: ZeroR
 	\item Naive Bayes, j48 tree, \textit{(libSVM)} 
 	\item bisher: Training auf train, Evaluierung mit dev
 \end{itemize}
 
 \end{frame}
+
+\subsection{Evaluation}
 
 \begin{frame}{Ergebnisse}
 \begin{table}[h]
@@ -321,39 +341,43 @@ j48 Tree          & 0.784      	   & 0.786             & 0.781
 \end{table}
 \end{frame}
 
-\begin{frame}{Feature Evaluation}
 
-% Zwei Frames geöffnet 
-%\begin{frame}{Confusion Matrix (Naive Bayes)}
+\begin{frame}{Confusion Matrix (Naive Bayes)}
 
 \begin{table}[h]
-\begin{tabular}{llllllll|l}
+\scalebox{0.9}{
+\begin{tabular}{l|l|l|l|l|l|l|l||l}
 a     & b     & c     & d    & e   & f  & g & h & \textless-- classified as \\ \hline
-14497 & 348   & 361   & 272  & 0   & 4  & 0 & 1 & a = ARG0                  \\
-291   & 11394 & 2143  & 1009 & 189 & 48 & 0 & 1 & b = ARGM                  \\
-3119  & 707   & 17064 & 375  & 31  & 27 & 0 & 0 & c = ARG1                  \\
-180   & 792   & 1854  & 2163 & 29  & 23 & 0 & 0 & d = ARG2                  \\
-2     & 217   & 23    & 141  & 379 & 3  & 0 & 0 & e = ARG3                  \\
-37    & 289   & 144   & 147  & 170 & 99 & 0 & 0 & f = ARG4                  \\
-0     & 13    & 0     & 1    & 0   & 0  & 3 & 0 & g = ARG5                  \\
-5     & 0     & 0     & 0    & 0   & 0  & 0 & 0 & h = ARGA                 
+\textbf{14497} & 348   & 361   & 272  & 0   & 4  & 0 & 1 & a = ARG0                  \\
+291   & \textbf{11394} & 2143  & 1009 & 189 & 48 & 0 & 1 & b = ARGM                  \\
+3119  & 707   & \textbf{17064} & 375  & 31  & 27 & 0 & 0 & c = ARG1                  \\
+180   & 792   & 1854  & \textbf{2163} & 29  & 23 & 0 & 0 & d = ARG2                  \\
+2     & 217   & 23    & 141  & \textbf{379} & 3  & 0 & 0 & e = ARG3                  \\
+37    & 289   & 144   & 147  & 170 & \textbf{99} & 0 & 0 & f = ARG4                  \\
+0     & 13    & 0     & 1    & 0   & 0  & \textbf{3} & 0 & g = ARG5                  \\
+5     & 0     & 0     & 0    & 0   & 0  & 0 & \textbf{0} & h = ARGA                 
 \end{tabular}
+}
 \end{table}
 \end{frame}
 
 
-\begin{frame}{Confusion Matrix (Naive Bayes)}
+\begin{frame}{Feature Evaluation}
+
 \begin{table}[h]
+\scalebox{0.9}{
 \begin{tabular}{l|lll|l}
                       & Precision      & Recall         & F-Measure      & F-Measure Change \\ \hline
 \textit{All Features} & \textit{0.771} & \textit{0.778} & \textit{0.770} & \textit{0}       \\ \hline
-- voice               & 0.748          & 0.754          & 0.745          & -0.025           \\
-- path                & 0.778          & 0.783          & 0.776          & \textbf{+0.006}  \\
-- phraseType          & 0.735          & 0.747          & 0.733          & -0.037           \\
-- position            & 0.758          & 0.773          & 0.757          & -0.013           \\
+-voice               & 0.748          & 0.754          & 0.745          & -0.025           \\
+-path                & 0.778          & 0.783          & 0.776          & \textbf{+0.006}  \\
+-phraseType          & 0.735          & 0.747          & 0.733          & -0.037           \\
+-position            & 0.758          & 0.773          & 0.757          & -0.013           \\
 -predicate            & 0.717          & 0.732          & 0.716          & \textbf{-0.54}  
 \end{tabular}
+}
 \end{table}
+
 
 \end{frame}
 
@@ -362,7 +386,7 @@ a     & b     & c     & d    & e   & f  & g & h & \textless-- classified as \\ \
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Ausblick}
 
-\begin{frame}{toDo}
+\begin{frame}{Ausblick}
 
 \begin{itemize}
 	\item Path Feature überarbeiten
