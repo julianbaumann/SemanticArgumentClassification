@@ -20,7 +20,6 @@ import re
 class ARGInstanceBuilder :
 	def __init__(self, _features = {}) :
 		self.features = _features
-		self.wnl = WordNetLemmatizer()
 
 	def get_arginstances(self, _pbi) :
 		'''
