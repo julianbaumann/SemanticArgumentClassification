@@ -6,7 +6,7 @@
 \defcounter {refsection}{0}\relax 
 \beamer@sectionintoc {1}{Problemstellung}{3}{0}{1}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {2}{Daten}{4}{0}{2}
+\beamer@sectionintoc {2}{Daten \& Tools}{4}{0}{2}
 \defcounter {refsection}{0}\relax 
 \beamer@sectionintoc {3}{Umsetzung}{10}{0}{3}
 \defcounter {refsection}{0}\relax 
