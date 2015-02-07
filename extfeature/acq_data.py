@@ -26,10 +26,10 @@ if __name__ == '__main__' :
 	print('\n- acquiring experiment data -\n')
 	
 	# vars
-	exp_name = 'SemanticArgumentClassification'
-	files = [exp_name + '_data_train.arff', exp_name + '_data_dev.arff', exp_name + '_data_test.arff']
-	ratios = [0.6, 0.2, 0.2]
-	pbi_ratio = 1.
+	exp_name = 'SemanticArgumentClassification' # the experiment's name
+	files = [exp_name + '_data_train.arff', exp_name + '_data_dev.arff', exp_name + '_data_test.arff'] # the output filenames
+	ratios = [0.6, 0.2, 0.2] # their corresponding ratios (60%, 20%, 20%)
+	pbi_ratio = 1. # ratio of the total PropBank corpus to acquire data from
 	# init
 	pbi = propbank_ptb.instances()
 	featurelist = ['predicate', 'path', 'phraseType', 'position', 'voice', 'class'] # initialize ARGInstanceBuilder with featurelist

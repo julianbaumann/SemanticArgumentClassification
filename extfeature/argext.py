@@ -69,18 +69,21 @@ class ARGInstanceBuilder :
 				list of ARGInstances
 		'''
 		res = []
-		for arg in _pbi.arguments :
+		for arg in _pbi.arguments : # iterate through all arguments in _pbi
 			argfeatures = {}
+			
+			# predicate feature
 			if 'predicate' in self.features :
-				argfeatures['predicate'] = re.sub(r'(\w+)\..+', r'\1', _pbi.roleset)
+				argfeatures['predicate'] = re.sub(r'(\w+)\..+', r'\1', _pbi.roleset) # lemmatize the predicate and then set
 				# argfeatures['predicate'] = self.wnl.lemmatize(_pbi.predicate.select(_pbi.tree).leaves()[0], "v")
 				# argfeatures['predicate'] = _pbi.predicate.select(_pbi.tree).leaves()[0]
+			
+			# path feature
 			if 'path' in self.features :
-				
 				senTree = ParentedTree.convert(_pbi.tree)
 				argTree = arg[0].select(senTree)
 				predTree = _pbi.predicate.select(senTree)
-				while argTree.label() == "*CHAIN*" or argTree.label() == "*SPLIT*":					
+				while argTree.label() == "*CHAIN*" or argTree.label() == "*SPLIT*":
 					argTree = argTree[0]
 				while predTree.label() == "*CHAIN*" or predTree.label() == "*SPLIT*":					
 					predTree = predTree[0]
@@ -109,18 +112,20 @@ class ARGInstanceBuilder :
 					node = predParents[i]
 					stringPath += re.sub(r"(\w+)-.+", r"\1", node.label()) + "!"
 				argfeatures['path'] = stringPath[:-1]
-				
+			
+			# phraseType feature
 			if 'phraseType' in self.features :
 				argTree = arg[0].select(_pbi.tree)
-				while argTree.label() == "*CHAIN*" or argTree.label() == "*SPLIT*":					
+				while argTree.label() == "*CHAIN*" or argTree.label() == "*SPLIT*": # traverse tree until a real constituent is found
 					argTree = argTree[0]
-				argfeatures['phraseType'] = re.sub(r"(\w+)[-=$\|].+", r"\1", argTree.label())
-				
+				argfeatures['phraseType'] = re.sub(r"(\w+)[-=$\|].+", r"\1", argTree.label()) # normalize (e.g. NP-SUBJ -> NP) and set
+			
+			# position feature
 			if 'position' in self.features :
 				predTreePointer = _pbi.predicate
-				while not type(predTreePointer) is PropbankTreePointer: 
+				while not type(predTreePointer) is PropbankTreePointer: # traverse tree while the pointer is not a real constituent
 					predTreePointer = predTreePointer.pieces[0] 
-				pred_wordnum =predTreePointer.wordnum
+				pred_wordnum = predTreePointer.wordnum # set predicate wordnumber
 				arg_wordnum = None
 				if type(arg[0]) is PropbankTreePointer :
 					arg_wordnum = arg[0].wordnum
@@ -132,27 +137,28 @@ class ARGInstanceBuilder :
 						arg_pieces = arg_pieces[0].pieces
 					# then get the wordnum
 					arg_wordnum = arg_pieces[0].wordnum
+				# compare wordnumbers and normalize to 'before' or 'after'
 				if arg_wordnum < pred_wordnum :
 					argfeatures['position'] = 'before'
 				else :
 					argfeatures['position'] = 'after'
+					
+			# voice feature
 			if 'voice' in self.features :
+				# extract voice from PropBankInstance-inflection and normalize to 'active', 'passive' and 'NONE'
 				if _pbi.inflection.voice == 'a' :
 					argfeatures['voice'] = 'active'
 				elif _pbi.inflection.voice == 'p' :
 					argfeatures['voice'] = 'passive'
 				else:
 					argfeatures['voice'] = 'NONE'
+			
+			# class feature
 			if 'class' in self.features :
 				argfeatures['class'] = arg[1].split("-")[0]
 				# argfeatures['class'] = re.sub(r'(ARG[0-5])\-\w+', r'\1', arg[1])
-			# if 'headword' in features :
-				# headword
-				# not sure if annotated in PropBank
-			# if 'subcategorization' in features :
-				# the parent node of the predicate (e.g. [VP] -> VBD -> 'rose')
-				# is this a necessary feature?
-			res.append(ARGInstance(argfeatures))
+			
+			res.append(ARGInstance(argfeatures)) # append the initialized ARGInstance to the result
 		return res
 
 class ARGInstance :
@@ -259,7 +265,7 @@ class ARFFDocument :
 		'''
 			returns the full ARFFDocument in ARFF as str
 		'''
-		return self.get_arff()
+		return self.get_arff() # get_arff() with default parameters returns full data
 	
 	def get_arff(self, _data_index_lower=0, _data_index_upper=None) :
 		'''
@@ -306,9 +312,9 @@ class ARFFDocument :
 		res += '\n'
 		# data
 		res += '@data\n'
-		if _data_index_upper is None :
+		if _data_index_upper is None : # if _data_index_upper is not set, it is set to the rest of the data
 			_data_index_upper = len(self.data)
-		for i in range(_data_index_lower, _data_index_upper) :
+		for i in range(_data_index_lower, _data_index_upper) : # range is defined by _data_index_lower and _data_index_upper
 			for attribute in self.attributes :
 				# if attribute value contains spaces it must be in quotes (see ARFF specification)
 				if ' ' in self.data[i].get_feature(attribute) :
@@ -354,7 +360,7 @@ class ARFFDocument :
 		'''
 		try :
 			with open(_file, 'w') as fo :
-				fo.write(str(self))
+				fo.write(str(self)) # write str representation of all data
 		except :
 			print('Error occured while writing ARFFDocument to "' + _file + '"')
 	
@@ -371,14 +377,14 @@ class ARFFDocument :
 					a list of floats that specify the ratio of data to be written into the file at the same index
 					these ratios must add up to less than or exactly 1
 		'''
-		if len(_files) == len(_ratios) :
-			if sum(_ratios) <= 1 :
+		if len(_files) == len(_ratios) : # check for files to ratios inconsistency
+			if sum(_ratios) <= 1 : # check for invalid ratio sum
 				data_cursor = 0
 				for i in range(len(_files)) :
-					ratio_index = floor(_ratios[i]*len(self.data))+data_cursor
+					ratio_index = floor(_ratios[i]*len(self.data))+data_cursor # set current upper data index to ratio length plus the current cursor index in data
 					try :
 						with open(_files[i], 'w') as fo :
-							fo.write(self.get_arff(data_cursor, ratio_index))
+							fo.write(self.get_arff(data_cursor, ratio_index)) # call get_arff with bounds corresponding to ratio and current cursor index in data
 					except IOError as err:
 						print('Error occured while writing ARFFDocument to "' + _files[i] + '"')
 					data_cursor = ratio_index
