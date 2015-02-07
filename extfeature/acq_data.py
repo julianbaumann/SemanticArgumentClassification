@@ -1,3 +1,22 @@
+'''
+	acq_data
+	
+	This script is designed to acquire experiment data in the ARFF from the PropBank corpus.
+	
+	The task it is designed to complete, is the extraction of arguments and their features for automatic semantic argument classification.
+	It was written as part of the seminar "Designing Experiments for Machine Learning Tasks" by Eva Mujdricza-Maydt at the University of Heidelberg.
+	
+	
+	requirements :
+		Python 3+
+		NLTK 3.0+
+		argext library
+		the full Penn Tree Bank subcorpus used in PropBank annotation
+	
+	authors :
+		Julian Baumann, Kevin Decker and Maximilian Mueller-Eberstein
+'''
+
 from argext import *
 from nltk.corpus import propbank_ptb
 from math import floor

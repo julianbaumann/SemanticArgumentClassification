@@ -1,5 +1,20 @@
+'''
+	argext test
+	
+	This script tests the argext library by extracting the first 100 PropBankInstances to the file 'test-arff.arff'.
+	The features extracted are 'predicate', 'path', 'phraseType', 'position', 'voice' and 'class'
+	
+	requirements :
+		Python 3+
+		NLTK 3.0+
+		argext library
+	
+	authors :
+		Julian Baumann, Kevin Decker and Maximilian Mueller-Eberstein
+'''
+
 from argext import *
-from nltk.corpus import propbank
+from nltk.corpus import propbank_ptb
 
 print('\n- testing feature extraction -\n')
 
