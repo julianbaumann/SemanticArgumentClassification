@@ -18,7 +18,7 @@ from nltk.corpus import propbank_ptb
 
 print('\n- testing feature extraction -\n')
 
-pbi = propbank.instances()
+pbi = propbank_ptb.instances()
 # full feature list
 # featurelist = ['predicate', 'path', 'phraseType', 'position', 'voice', 'headword', 'subcategorization', 'class']
 # currently supported feature list
