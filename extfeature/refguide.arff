@@ -9,10 +9,7 @@
 @attribute path { }
 @attribute phraseType { }
 @attribute position { before, after }
-% PropbankInstance.inflection.voice
 @attribute voice { active, passive }
-@attribute headword { }
-@attribute subcategorization { }
 @attrbiute class { ARG0, ARG1, ARG2, ARG3, ARG4, ARGM }
 
 @data
