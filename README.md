@@ -5,9 +5,6 @@ Julian Baumann (baumann@cl.uni-heidelberg.de)
 Kevin Decker (decker@cl.uni-heidelberg.de)
 Maximilian Mueller-Eberstein (eberstein@cl.uni-heidelberg.de)
 
-Version History
-	//TODO
-
 Requirements
 	Python 3+
 	NLTK 3.0.0
@@ -47,7 +44,6 @@ Under the 'corpora' tab, download 'propbank' and 'ptb'.
 Transfer your copy of the PennTreeBank into 'nltk_data/corpora/ptb/'.
 Please be aware that all directory and filenames must be in capital letters, as NLTKs CorpusReaders will not find the directories otherwise.
 Lastly, the installation guides for Weka can be found at the official source //TODO.
-Now, you are good to go!
 
 Feature Extraction
 ------------------
@@ -119,5 +115,4 @@ memory and trained correctly only after setting the cap to 100GB.
 
 Acknowledgements
 ----------------
-We would like to thank Eva Mudricza-Maydt for her help setting up this project and her informative seminar sessions.
 Thank you for your interest and good luck experimenting.
