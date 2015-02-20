@@ -25,7 +25,11 @@ Files
 
 Table of Contents
 -----------------
-//TODO
+0. Introduction
+1. Data Setup
+2. Feature Extraction
+3. Notes on Weka
+4. Acknowledgements
 
 Introduction
 ------------
@@ -36,14 +40,14 @@ as well as our results that were achieved with varying algorithms.
 
 Data Setup
 ----------
-The installation guides for the Python language and the NLTK can be found very well documented at their official sources //TODO and //TODO.
+The installation guides for the Python language and the NLTK can be found very well documented at their official sources https://docs.python.org/3/ and http://www.nltk.org/.
 To install PropBank and PennTreeBank corpora, the nltk.download() interface should be used.
 Call it by importing nltk into a python console and running nltk.download().
 Under the 'corpora' tab, download 'propbank' and 'ptb'.
 (Should ~10% of the PennTreeBank be sufficient for your experiments, you may also install 'treebank' instead of 'ptb')
 Transfer your copy of the PennTreeBank into 'nltk_data/corpora/ptb/'.
 Please be aware that all directory and filenames must be in capital letters, as NLTKs CorpusReaders will not find the directories otherwise.
-Lastly, the installation guides for Weka can be found at the official source //TODO.
+Lastly, the installation guides for Weka can be found at the official source http://www.cs.waikato.ac.nz/ml/weka/.
 
 Feature Extraction
 ------------------
@@ -108,7 +112,7 @@ refguide.arff
 
 Notes on Weka
 -------------
-The usage guidelines for Weka are far better documented at the official sources found here: //TODO.
+The usage guidelines for Weka are far better documented at the official sources found here: http://weka.wikispaces.com/.
 For the data acquired in this experiment, we have found that memory intensive algorithms such as J48
 require a large amount of RAM. OutOfMemoryExceptions were raised even in a cluster with 10GB of available
 memory and trained correctly only after setting the cap to 100GB.
