@@ -114,23 +114,24 @@ ARGM & modifier \\
 Wir extrahieren die Features und die Klasse aus unseren Instanzen des ProbBank Korpus wie folgt:
 \begin{lstlisting}[frame=lines]
 featureList = [...] # zu extrahierende Features
+extArgList = []
 for pbInstance in pbInstances :
    for pbArg in pbInstance.arguments :
       features = []
       for feature in featureList :
-         featureList.append(extFeature(feature, pbArg, pbInstance))
-# write features to file in ARFF
+         extArgList.append(extFeature(feature, pbArg, pbInstance))
+# write ARGInstances to file in ARFF
 \end{lstlisting}
 
 \subsubsection{Features}
 \begin{itemize}
-\item predicate : nominal
-\item path : nominal
-\item phrase type : nominal
-\item position(before/after) : boolean
-\item voice(active/passive) : boolean
-\item headword : nominal
-\item subcategorization : nominal
+\item predicate : nominal \{ eat, pray, love, ... \}
+\item path : nominal \{ NP$\uparrow$S$\downarrow$VP$\downarrow$VP, MD$\uparrow $VP$\uparrow$S$\downarrow$VP$\downarrow$VP, ... \}
+\item phrase type : nominal \{ NP, MD, PP, ... \}
+\item position : boolean \{ before, after \}
+\item voice : boolean \{ active, passive \}
+\item headword : nominal \{ food, god, Rose, ... \}
+\item subcategorization : nominal \{ VP, NP, ... \}
 \end{itemize}
 siehe \cite{svm}
 
