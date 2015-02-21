@@ -1,0 +1,22 @@
+\begin{thebibliography}{1}
+
+\bibitem{Hall+FHPRW:2009}
+M.~Hall, E.~Frank, G.~Holmes, B.~Pfahringer, P.~Reutemann, and I.~H. Witten.
+\newblock The {WEKA} data mining software: An update.
+\newblock {\em {SIGKDD} Explorations}, 11(1):10--18, 2009.
+
+\bibitem{Marcus93buildinga}
+M.~P. Marcus, B.~Santorini, and M.~A. Marcinkiewicz.
+\newblock Building a large annotated corpus of english: The penn treebank.
+\newblock {\em COMPUTATIONAL LINGUISTICS}, 19(2):313--330, 1993.
+
+\bibitem{Palmer:2005:PBA:1122624.1122628}
+M.~Palmer, D.~Gildea, and P.~Kingsbury.
+\newblock The proposition bank: An annotated corpus of semantic roles.
+\newblock {\em Comput. Linguist.}, 31(1):71--106, Mar. 2005.
+
+\bibitem{Pradhan05supportvector}
+S.~Pradhan, K.~Hacioglu, V.~Krugler, W.~Ward, J.~H. Martin, and D.~Jurafsky.
+\newblock Support vector learning for semantic argument classification, 2005.
+
+\end{thebibliography}
