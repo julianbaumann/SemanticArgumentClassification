@@ -15,11 +15,12 @@
 \maketitle
 
 \section{Einleitung}
-Unter Semantic Argument Classification versteht man, einem Satz seine semantische Rollen wie zum Beispiel Subjekt, Prädikat und Objekt zuzuweisen. Vereinfacht gesagt versucht man zu klären, "wer wem was antut". Sie gehört zum grundlegenden Pre-Processing für verschiedene Natural Language Processing-Anwendungen wie zum Beispiel Machine Translation und ist aus diesem Grunde auch ein wichtiger Aspekt der Forschung. Angelehnt an die Veröffentlichung von \cite{Pradhan05supportvector} versuchten wir im Verlauf unseres Projekts diese Aufgabe automatisch und überwacht durch Machine Learning-Ansätze umzusetzen. 
+Unter Semantic Argument Classification versteht man, einem Satz seine semantische Rollen wie zum Beispiel Subjekt, Prädikat und Objekt zuzuweisen. Vereinfacht gesagt versucht man zu klären, "wer wem was antut". Sie gehört zum grundlegenden Pre-Processing für verschiedene Natural Language Processing-Anwendungen wie zum Beispiel Machine Translation und ist aus diesem Grunde auch ein wichtiger Aspekt der Forschung. \\
+Angelehnt an die Veröffentlichung von \cite{Pradhan05supportvector} versuchten wir im Verlauf unseres Projekts diese Aufgabe automatisch und überwacht durch Machine Learning-Ansätze umzusetzen. 
 
 \section{Grundlagen}
 \subsection{Daten und Tools}
-Als Grundlage für unsere Experimente wurden verschiedene Datensätze und Tools verwendet. Wichtigste Ressourcen waren dabei PropBank und Penn TreeBank. PropBank \cite{Palmer:2005:PBA:1122624.1122628} oder auch Proposition Bank ist ein Korpus, in dem für jedes in ihm enthaltene Verb annotiert wurde, welche semantische Rollen es besetzt. Dies ist in Form von sogenannten Frames organisiert, welche auf mehr oder weniger lesbare Weise kodieren, welche Argumente überhaupt gefordert werden können. Im Gegensatz zu FrameNet, welches das gleiche versucht, ist PropBank jedoch nicht ganz so spezifisch sondern versucht durch generellere Argumente für möglichst viele Parser verwendbar zu sein.\\ 
+Als Grundlage für unsere Experimente wurden verschiedene Datensätze und Tools verwendet. Wichtigste Ressourcen waren dabei PropBank und Penn TreeBank. PropBank \cite{Palmer:2005:PBA:1122624.1122628} oder auch Proposition Bank ist ein Annotations-Schema, nach welchem für jedes  Verb annotiert wird, welche semantische Rollen es besetzt. \\ Dies ist in Form von sogenannten Frames organisiert, die kodieren, welche Argumente überhaupt gefordert werden können. Im Gegensatz zu FrameNet, welches das gleiche versucht, ist PropBank jedoch nicht ganz so spezifisch sondern versucht durch algemeinere Kategorien für möglichst viele Parser verwendbar zu sein.\\ 
 
 \begin{table}
 	\centering
@@ -40,7 +41,7 @@ Als Grundlage für unsere Experimente wurden verschiedene Datensätze und Tools 
 	\end{tabular}
 	\caption{Argumente der PropBank}
 	\end{table}
-	Die Penn TreeBank \cite{Marcus93buildinga} ist ein Subkorpus des Wall Street Journals(WSJ) bestehend aus etwa einer Millionen Tokens. Davon sind etwa 112.917 Prädikat-Argument Strukuren nach dem PropBank-Schema annotiert. 
+	Die Penn TreeBank \cite{Marcus93buildinga} ist ein syntaktisch annotierter Subkorpus des Wall Street Journals(WSJ) bestehend aus etwa einer Millionen Tokens. Davon sind etwa 112.917 Prädikat-Argument Strukuren nach dem PropBank-Schema annotiert. 
 	\\
 	Die oben genannten Korpora bilden die Grundlage für die im Folgenden näher erklärten Experimente.
 	Zur Extraktion der Features wurde die Programmiersprache Python in der Version 3.4 zusammen mit dem Natural Language Toolkit \(Version 3.0\) verwendet. Die eigentliche Anwendung der Machine-Learning Algorithmen wurde in Weka \cite{Hall+FHPRW:2009} realisiert.
@@ -48,7 +49,7 @@ Als Grundlage für unsere Experimente wurden verschiedene Datensätze und Tools 
 	Zur Klassifikation sollten drei verschieden Algorithmen verwendet werden:
 	Der Naïve Bayes und der J48-Algorithmus, sowie eine Support
 	Vector Machine. Letztere wurde ausgewählt, um den Experimentausgang mit den Ergebnissen von \cite{Pradhan05supportvector} zu vergleichen, die ebenfalls eine Support Vector Machine verwenden.
-	Wie später im Abschnitt Experimente genauer beschrieben wird, lieferte der Naïve Bayes die zuverlässigsten Ergebnisse. 
+	
 	
 	
 
@@ -76,13 +77,52 @@ Instanzen der PropBank liegen in einem Space- und Newline-separierten Textformat
 \begin{center}
 	\includegraphics[scale=0.23]{argext_graphic}
 \end{center}
-Mit Hilfe des NLTK, welches die rohen Textdateien beider Korpora in vordefinierte Klassen lädt, erstellen wir ARGInstances, in denen alle Features in normalisierter- und leicht abrufbarer Form vorliegen. Die Helferklasse ARGInstanceBuilder übernimmt die Zusammenführung beider Korpora, die Berechnung des Path-Features mittels Baumtraversierung und Ermittlung des Lowest-Common-Ancestors und ähnliche Extraktionsaufgaben, sowie die finale Normalisierung. Die so generierten ARGInstances werden zuletzt an ein ARFFDocument weitergegeben, welches Trainings-, Entwicklungs- und Testdaten in ARFF-Dateien schreibt, die direkt mit Weka weiterverarbeitet werden können.
+Mit Hilfe des NLTK, welches die rohen Textdateien beider Korpora in vordefinierte Klassen lädt, erstellen wir ARGInstances, in denen alle Features in normalisierter- und leicht abrufbarer Form vorliegen. Die Helferklasse ARGInstanceBuilder übernimmt die Zusammenführung beider Korpora, die Berechnung des Path-Features mittels Baumtraversierung und Ermittlung des Lowest-Common-Ancestors und ähnliche Extraktionsaufgaben, sowie die finale Normalisierung. Die so generierten ARGInstances werden zuletzt an ein ARFFDocument weitergegeben, welches Trainings-, Development- und Testdaten in ARFF-Dateien schreibt, die direkt mit Weka weiterverarbeitet werden können.
 
 \section{Experimente}
-\subsection{Probleme}
+\subsection{Setup}
 
-\section{Evaluation}
-\subsection{Probleme}
+Wir haben die Daten in 60\% Training 20\% Development und 20\% Test Daten aufgeteilt. 
+Als Baselines haben wir die ZeroR Baseline gewählt, da in der Literatur zumeist nur Ergebnisse für die schwierigere Aufgabe Argument Identifikation+Klassifikation zu finden sind. \\
+Als Algorithmen benutzen wir Naive Bayes und j48 decision tree mit den Weka Default Einstellungen. \\
+Ursprünglich hatten wir auch noch geplant auf einem SVM basierten Algorithmus zu evaluieren. 
+Dabei wurden jedoch alle Instanzen der häufigsten Klasse zugeteilt, was an einem unbalancierten Datenset liegen könnte.
+
+\subsection{Feature Selektion auf dem Development set (Naive Bayes}
+\begin{table}[h]
+\scalebox{0.9}{
+\begin{tabular}{l|lll|l}
+                      & Precision      & Recall         & F-Measure      & F-Measure Change \\ \hline
+\textit{All Features} & \textit{0.771} & \textit{0.778} & \textit{0.770} & \textit{0}       \\ \hline
+-voice               & 0.748          & 0.754          & 0.745          & -0.025           \\
+-path                & 0.778          & 0.783          & 0.776          & \textbf{+0.006}  \\
+-phraseType          & 0.735          & 0.747          & 0.733          & -0.037           \\
+-position            & 0.758          & 0.773          & 0.757          & -0.013           \\
+-predicate            & 0.717          & 0.732          & 0.716          & \textbf{-0.054}  
+\end{tabular}
+}
+\end{table}
+
+Auf dem Development Set konnten wir feststellen, dass wir durch das Entfernen des Path Features bessere Ergebnisse erreichen konnten.
+Auch weitere Versuche das Path Feature zu verbessern indem wir aufeinanderfolgende doppelte Kategorien zusammenfassen und nur den Pfad vom Argument aufwärts benutzen schlugen fehl. \\
+Also haben wir dieses Feature auch bei der Evaluierung auf dem Testset weggelassen
+
+
+\subsection{Test Set Ergebnisse}
+\begin{table}[h]
+\begin{tabular}{l|lll}
+                  & Precision      & Recall         & F-Measure      \\ \hline
+\textit{Baseline} & \textit{0.132} & \textit{0.364} & \textit{0.194} \\ \hline
+Naive Bayes       & 0.777          & 0.781          & 0.774          \\
+j48 Tree          & 0.847      	   & 0.849            & 0.846          
+\end{tabular}
+\end{table}
+
+Wie zu erwarten, konnten wir die ZeroR Baseline deutlich schlagen. 
+Der Decision Tree Algorithmus erwies sich dabei als deutlich effektiver als der Naive Bayes Algorithmus.
+%Hier noch mehr schreiben????
+
+
 
 \section{Retrospektive}
 \bibliographystyle{abbrv}
