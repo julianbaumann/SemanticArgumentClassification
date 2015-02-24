@@ -2,6 +2,7 @@
 \usepackage[ngerman]{babel}
 \usepackage{natbib}
 \usepackage{graphicx}
+\usepackage{qtree}
 \usepackage[utf8]{inputenc}
 
 %opening
@@ -18,7 +19,7 @@ Unter Semantic Argument Classification versteht man, einem Satz seine semantisch
 
 \section{Grundlagen}
 \subsection{Daten und Tools}
-Als Grundlage für unsere Experimente wurden verschiedene Datensätze und Tools verwendet. Wichtigste Ressourcen waren dabei PropBank und PennTree Bank. PropBank \cite{Palmer:2005:PBA:1122624.1122628} oder auch Proposition Bank ist ein Korpus in dem für jedes in ihm enthaltene Verb annotiert wurde, welche semantische Rollen es besetzt. Dies ist in Form von sogenannten Frames organisiert, welche auf mehr oder weniger lesbare Weise kodieren, welche Argumente überhaupt gefordert werden können. Im Gegensatz zu FrameNet, welches das gleiche versucht, ist PropBank jedoch nicht ganz so spezifisch sondern versucht durch generellere Argumente für möglichst viele Parser verwendbar zu sein.\\ 
+Als Grundlage für unsere Experimente wurden verschiedene Datensätze und Tools verwendet. Wichtigste Ressourcen waren dabei PropBank und Penn TreeBank. PropBank \cite{Palmer:2005:PBA:1122624.1122628} oder auch Proposition Bank ist ein Korpus, in dem für jedes in ihm enthaltene Verb annotiert wurde, welche semantische Rollen es besetzt. Dies ist in Form von sogenannten Frames organisiert, welche auf mehr oder weniger lesbare Weise kodieren, welche Argumente überhaupt gefordert werden können. Im Gegensatz zu FrameNet, welches das gleiche versucht, ist PropBank jedoch nicht ganz so spezifisch sondern versucht durch generellere Argumente für möglichst viele Parser verwendbar zu sein.\\ 
 
 \begin{table}
 	\centering
@@ -39,7 +40,7 @@ Als Grundlage für unsere Experimente wurden verschiedene Datensätze und Tools 
 	\end{tabular}
 	\caption{Argumente der PropBank}
 	\end{table}
-	Die PennTree Bank \cite{Marcus93buildinga} ist ein Subkorpus des Wall Street Journals(WSJ) bestehend aus etwa einer Millionen Tokens. Davon sind etwa 112.917 Prädikat-Argument Strukuren nach dem PropBank-Schema annotiert. 
+	Die Penn TreeBank \cite{Marcus93buildinga} ist ein Subkorpus des Wall Street Journals(WSJ) bestehend aus etwa einer Millionen Tokens. Davon sind etwa 112.917 Prädikat-Argument Strukuren nach dem PropBank-Schema annotiert. 
 	\\
 	Die oben genannten Korpora bilden die Grundlage für die im Folgenden näher erklärten Experimente.
 	Zur Extraktion der Features wurde die Programmiersprache Python in der Version 3.4 zusammen mit dem Natural Language Toolkit \(Version 3.0\) verwendet. Die eigentliche Anwendung der Machine-Learning Algorithmen wurde in Weka \cite{Hall+FHPRW:2009} realisiert.
@@ -60,16 +61,22 @@ Als Grundlage für unsere Experimente wurden verschiedene Datensätze und Tools 
 %umsetzung
 \section{Features}
 \subsection{einzelne Features}
-Für das Experiment wurden 5 Features extrahiert und ihr Einfluss auf die Ergebnisse getestet. Das erste Feature, \textbf{Predicate}, ist einfach die lemmatisierte Form des Prädikats. In unserem Datenset trat dieses Feature in 3966 verschiedenen Werten auf. Zweites Feature, \textbf{Path}, beschreibt den Weg, der in einem Syntaxbaum durchlaufen werden muss, um vom Prädikat des Satzes zum Argument in Frage zu gelangen. Dies wird durch $\uparrow$ und $\downarrow$ gekennzeichnet. Dieses Feature hat sehr viele verschiedene Ausprägungen( 41737 distinct values), die durch verschiedene Satzstrukuren verursacht werden. 
+Für das Experiment wurden 5 Features extrahiert und ihr Einfluss auf die Ergebnisse getestet. Das erste Feature, \textbf{Predicate}, ist einfach die lemmatisierte Form des Prädikats. In unserem Datenset trat dieses Feature in 3966 verschiedenen Werten auf. Zweites Feature, \textbf{Path}, beschreibt den Weg, der in einem Syntaxbaum durchlaufen werden muss, um von einem Argument zum Prädikat der Instanz zu gelangen. Dies wird durch $\uparrow$ und $\downarrow$ gekennzeichnet.
 
-\centering	\includegraphics[scale=0.4]{Syntaxbaum}
+\begin{center}
+\Tree [.S [\qroof{The lawyers\\ \textbf{ARG0}}.NP  ] [.VP [.VBD {went\\ \textbf{Predicate}} ] [.PP {to\\ \textbf{Null}} ] [.NP {work\\ \textbf{ARG4}} ] ] ]
+\end{center}
 
-
-Im Satz \glqq The lawyers went to work\grqq\ würde dieses Feature beispielsweise den Wert 
-$ NP\uparrow S\downarrow VP\downarrow VBD$ annehmen. Im Feature \textbf{Phrase Type} ist kodiert, welcher Wortart(also NP, VP, etc.) das gesuchte Argument angehört. In unserem Fall sind dies 65 verschiedene Kategorien. 
+Im Satz \glqq The lawyers went to work\grqq\ würde dieses Feature beispielsweise den Wert NP $\uparrow$ S $\downarrow$ VP $\downarrow$ VBD annehmen. Dieses Feature hat sehr viele verschiedene Ausprägungen( 41737 distinct values), die durch verschiedene Satzstrukuren verursacht werden. In der Evaluation betrachten wir ebenfalls Vor- und Nachteile der Vereinfachung dieses Features in der Form von bsp. Duplikatbeseitigung (... $\uparrow$ S $\downarrow$ VP $\downarrow$ VP $\downarrow$ ... $\Rightarrow$ ... $\uparrow$ S $\downarrow$ VP $\downarrow$ ... ) oder Pruning (NP $\uparrow$ S $\downarrow$ VP $\downarrow$ ... $\Rightarrow$ NP $\uparrow$). Im Feature \textbf{Phrase Type} ist kodiert, welchem Konstituententypus (also NP, VP, etc.) das gesuchte Argument angehört. In unserem Fall sind dies 65 verschiedene Kategorien, nachdem für unsere Zwecke zu eingrenzende Typen konvertiert wurden (z.B. NP-SUBJ zu NP).
 Die anderen beiden Features \textbf{Position} und \textbf{Voice} sollten beide intuitiv betrachtet binär sein, durch die unvollständige Annotation in Propbank ist dies im Falle von Voice, also ob das Argument passiv oder aktiv ist, nicht der Fall. Hier gibt es noch einen dritten Wert unknown, wenn für das Prädikat keine Angabe diesbezüglich gemacht wurde. Position hingegen ist ein rein binäres Feature und gibt an, ob das Argument vor oder nach dem Prädikat auftritt. 
 
 \subsection{Featureextraktion}
+Das Ziel unserer Featureextraktion bestand darin, die Daten der PropBank und Penn TreeBank mit den oben genannten Features in normalisierter Form zusammenzuführen und in das Weka-kompatible Attribute-Relation File Format (ARFF) zu konvertieren.\\
+Instanzen der PropBank liegen in einem Space- und Newline-separierten Textformat vor. Innerhalb einer Instanz verweisen Pointer auf Teilbäume der korrespondierenden Penn TreeBank Sätze, die in einem Klammer-Format annotiert sind.
+\begin{center}
+	\includegraphics[scale=0.23]{argext_graphic}
+\end{center}
+Mit Hilfe des NLTK, welches die rohen Textdateien beider Korpora in vordefinierte Klassen lädt, erstellen wir ARGInstances, in denen alle Features in normalisierter- und leicht abrufbarer Form vorliegen. Die Helferklasse ARGInstanceBuilder übernimmt die Zusammenführung beider Korpora, die Berechnung des Path-Features mittels Baumtraversierung und Ermittlung des Lowest-Common-Ancestors und ähnliche Extraktionsaufgaben, sowie die finale Normalisierung. Die so generierten ARGInstances werden zuletzt an ein ARFFDocument weitergegeben, welches Trainings-, Entwicklungs- und Testdaten in ARFF-Dateien schreibt, die direkt mit Weka weiterverarbeitet werden können.
 
 \section{Experimente}
 \subsection{Probleme}
