@@ -15,7 +15,7 @@
 \maketitle
 
 \section{Einleitung}
-Unter Semantic Argument Classification versteht man, einem Satz seine semantische Rollen wie zum Beispiel Subjekt, Prädikat und Objekt zuzuweisen. Vereinfacht gesagt versucht man zu klären, "wer wem was antut". Sie gehört zum grundlegenden Pre-Processing für verschiedene Natural Language Processing-Anwendungen wie zum Beispiel Machine Translation und ist aus diesem Grunde auch ein wichtiger Aspekt der Forschung. \\
+Unter Semantic Argument Classification versteht man, einem Satz seine semantische Rollen wie zum Beispiel Subjekt, Prädikat und Objekt zuzuweisen. Vereinfacht gesagt versucht man zu klären, "wer wem was antut". Beispielsweise würde der Satz "It operates stores mostly in Iowa and Nebraska" folgendermaßen annotiert werden: $ [_{\textbf{Arg0}} It][_{\textbf{Pred}} operates][_{\textbf{Arg1}} stores][_{\textbf{ArgLoc}} mostly\ in\ Iowa\\ and\ Nebraska] $. Sie gehört zum grundlegenden Pre-Processing für verschiedene Natural Language Processing-Anwendungen wie zum Beispiel Machine Translation und ist aus diesem Grunde auch ein wichtiger Aspekt der Forschung. \\
 Angelehnt an die Veröffentlichung von \cite{Pradhan05supportvector} versuchten wir im Verlauf unseres Projekts diese Aufgabe automatisch und überwacht durch Machine Learning-Ansätze umzusetzen. 
 
 \section{Grundlagen}
@@ -68,7 +68,8 @@ Für das Experiment wurden 5 Features extrahiert und ihr Einfluss auf die Ergebn
 \Tree [.S [\qroof{The lawyers\\ \textbf{ARG0}}.NP  ] [.VP [.VBD {went\\ \textbf{Predicate}} ] [.PP {to\\ \textbf{Null}} ] [.NP {work\\ \textbf{ARG4}} ] ] ]
 \end{center}
 
-Im Satz \glqq The lawyers went to work\grqq\ würde dieses Feature beispielsweise den Wert NP $\uparrow$ S $\downarrow$ VP $\downarrow$ VBD annehmen. Dieses Feature hat sehr viele verschiedene Ausprägungen( 41737 distinct values), die durch verschiedene Satzstrukuren verursacht werden. In der Evaluation betrachten wir ebenfalls Vor- und Nachteile der Vereinfachung dieses Features in der Form von bsp. Duplikatbeseitigung (... $\uparrow$ S $\downarrow$ VP $\downarrow$ VP $\downarrow$ ... $\Rightarrow$ ... $\uparrow$ S $\downarrow$ VP $\downarrow$ ... ) oder Pruning (NP $\uparrow$ S $\downarrow$ VP $\downarrow$ ... $\Rightarrow$ NP $\uparrow$). Im Feature \textbf{Phrase Type} ist kodiert, welchem Konstituententypus (also NP, VP, etc.) das gesuchte Argument angehört. In unserem Fall sind dies 65 verschiedene Kategorien, nachdem für unsere Zwecke zu eingrenzende Typen konvertiert wurden (z.B. NP-SUBJ zu NP).
+Im Satz \glqq The lawyers went to work\grqq\ würde dieses Feature beispielsweise den Wert NP $\uparrow$ S $\downarrow$ VP $\downarrow$ VBD annehmen. Dieses Feature hat sehr viele verschiedene Ausprägungen( 41737 distinct values), die durch verschiedene Satzstrukuren verursacht werden.\\ In der Evaluation betrachten wir ebenfalls Vor- und Nachteile der Vereinfachung dieses Features in der Form von bsp. Duplikatbeseitigung (... $\uparrow$ S $\downarrow$ VP $\downarrow$ VP $\downarrow$ ... $\Rightarrow$ ... $\uparrow$ S $\downarrow$ VP $\downarrow$ ... ) oder Pruning (NP $\uparrow$ S $\downarrow$ VP $\downarrow$ ... $\Rightarrow$ NP $\uparrow$). Im Feature \textbf{Phrase Type} ist kodiert, welchem Konstituententypus (also NP, VP, etc.) das gesuchte Argument angehört. In unserem Fall sind dies 65 verschiedene Kategorien, nachdem für unsere Zwecke zu eingrenzende Typen konvertiert wurden (z.B. NP-SUBJ zu NP).\\
+\\
 Die anderen beiden Features \textbf{Position} und \textbf{Voice} sollten beide intuitiv betrachtet binär sein, durch die unvollständige Annotation in Propbank ist dies im Falle von Voice, also ob das Argument passiv oder aktiv ist, nicht der Fall. Hier gibt es noch einen dritten Wert unknown, wenn für das Prädikat keine Angabe diesbezüglich gemacht wurde. Position hingegen ist ein rein binäres Feature und gibt an, ob das Argument vor oder nach dem Prädikat auftritt. 
 
 \subsection{Featureextraktion}
@@ -88,7 +89,7 @@ Als Algorithmen benutzen wir Naive Bayes und j48 decision tree mit den Weka Defa
 Ursprünglich hatten wir auch noch geplant auf einem SVM basierten Algorithmus zu evaluieren. 
 Dabei wurden jedoch alle Instanzen der häufigsten Klasse zugeteilt, was an einem unbalancierten Datenset liegen könnte.
 
-\subsection{Feature Selektion auf dem Development set (Naive Bayes}
+\subsection{Feature Selektion auf dem Development set (Naïve Bayes}
 \begin{table}[h]
 \scalebox{0.9}{
 \begin{tabular}{l|lll|l}
@@ -104,8 +105,9 @@ Dabei wurden jedoch alle Instanzen der häufigsten Klasse zugeteilt, was an eine
 \end{table}
 
 Auf dem Development Set konnten wir feststellen, dass wir durch das Entfernen des Path Features bessere Ergebnisse erreichen konnten.
-Auch weitere Versuche das Path Feature zu verbessern indem wir aufeinanderfolgende doppelte Kategorien zusammenfassen und nur den Pfad vom Argument aufwärts benutzen schlugen fehl. \\
-Also haben wir dieses Feature auch bei der Evaluierung auf dem Testset weggelassen
+Auch weitere Versuche das Path Feature zu verbessern, indem wir aufeinanderfolgende, doppelte Kategorien zusammenfassen und nur den Pfad vom Argument aufwärts benutzen, schlugen fehl. \\
+Deshalb ließen wir dieses Feature, obwohl es im Originalpaper mit einbezogen wurde, aus unserer Evaluierung auf dem Testset raus, um ein besseres Ergebnis zu erzielen.
+
 
 
 \subsection{Test Set Ergebnisse}
@@ -113,13 +115,12 @@ Also haben wir dieses Feature auch bei der Evaluierung auf dem Testset weggelass
 \begin{tabular}{l|lll}
                   & Precision      & Recall         & F-Measure      \\ \hline
 \textit{Baseline} & \textit{0.132} & \textit{0.364} & \textit{0.194} \\ \hline
-Naive Bayes       & 0.777          & 0.781          & 0.774          \\
+Naïve Bayes       & 0.777          & 0.781          & 0.774          \\
 j48 Tree          & 0.847      	   & 0.849            & 0.846          
 \end{tabular}
 \end{table}
 
-Wie zu erwarten, konnten wir die ZeroR Baseline deutlich schlagen. 
-Der Decision Tree Algorithmus erwies sich dabei als deutlich effektiver als der Naive Bayes Algorithmus.
+Die von uns mit Bedacht niedrig gelegte ZeroR Baseline konnten wir, wie zu erwarten war, definitiv schlagen. Von den beiden Algorithmen, die wir nach mehreren Durchläufen für am passendsten erachtet hatten, erwies sich der Decision Tree Algorithmus als deutlich effektiver als der Naïve Bayes Algorithmus.
 %Hier noch mehr schreiben????
 
 
