@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.29)  28 FEB 2015 13:05
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.29)  28 FEB 2015 16:36
 entering extended mode
 **Abschlussbericht.tex
 
@@ -473,48 +473,84 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 18.
 
+
+Package natbib Warning: Citation `Pradhan05supportvector' on page 1 undefined o
+n input line 19.
+
+
+Package natbib Warning: Citation `Palmer:2005:PBA:1122624.1122628' on page 1 un
+defined on input line 23.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 23--24
 
  []
 
+
+Package natbib Warning: Citation `Marcus93buildinga' on page 1 undefined on inp
+ut line 44.
+
+
+Package natbib Warning: Citation `Hall+FHPRW:2009' on page 1 undefined on input
+ line 47.
+
+
+Package natbib Warning: Citation `Pradhan05supportvector' on page 1 undefined o
+n input line 51.
+
 [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 71--74
-
- []
-
-[2] <argext_graphic.png, id=15, 1445.4pt x 751.80875pt>
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
+<argext_graphic.png, id=15, 1445.4pt x 751.80875pt>
 File: argext_graphic.png Graphic file (type png)
-
-<use argext_graphic.png>
-Package pdftex.def Info: argext_graphic.png used on input line 79.
+ <use argext_graphic.png>
+Package pdftex.def Info: argext_graphic.png used on input line 80.
 (pdftex.def)             Requested size: 332.43501pt x 172.91237pt.
- [3 <C:/Users/maxme_000/Documents/git/SemanticArgumentClassification/Abschlussb
-ericht/argext_graphic.png>] [4]
+
+[3 <C:/Users/maxme_000/Documents/git/SemanticArgumentClassification/Abschlussbe
+richt/argext_graphic.png>]
+
+Package natbib Warning: Citation `Pradhan05supportvector' on page 4 undefined o
+n input line 110.
+
+[4]
+
+Package natbib Warning: Citation `Pradhan05supportvector' on page 5 undefined o
+n input line 134.
+
+[5]
 (C:\Users\maxme_000\Documents\git\SemanticArgumentClassification\Abschlussberic
-ht\Abschlussbericht.bbl) [5]
+ht\Abschlussbericht.bbl)
+
+Package natbib Warning: There were undefined citations.
+
+[6]
 (C:\Users\maxme_000\Documents\git\SemanticArgumentClassification\Abschlussberic
-ht\Abschlussbericht.aux) ) 
+ht\Abschlussbericht.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+) ) 
 Here is how much of TeX's memory you used:
- 2378 strings out of 493921
- 30349 string characters out of 3147269
- 102904 words of memory out of 3000000
- 5663 multiletter control sequences out of 15000+200000
+ 2372 strings out of 493921
+ 30268 string characters out of 3147269
+ 102844 words of memory out of 3000000
+ 5657 multiletter control sequences out of 15000+200000
  8241 words of font info for 29 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  27i,20n,25p,963b,340s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Abschlussbericht.pdf (5 pages, 190283 bytes).
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmti10.pfb>
+Output written on Abschlussbericht.pdf (6 pages, 193503 bytes).
 PDF statistics:
- 53 PDF objects out of 1000 (max. 8388607)
+ 56 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

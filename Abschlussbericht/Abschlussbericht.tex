@@ -15,7 +15,7 @@
 \maketitle
 
 \section{Einleitung}
-Unter Semantic Argument Classification versteht man, einem Satz seine semantische Rollen wie zum Beispiel Subjekt, Prädikat und Objekt zuzuweisen. Vereinfacht gesagt versucht man zu klären, "wer wem was antut". Beispielsweise würde der Satz "It operates stores mostly in Iowa and Nebraska" folgendermaßen annotiert werden: $ [_{\textbf{Arg0}} It][_{\textbf{Pred}} operates][_{\textbf{Arg1}} stores][_{\textbf{ArgLoc}} mostly\ in\ Iowa\\ and\ Nebraska] $. Sie gehört zum grundlegenden Pre-Processing für verschiedene Natural Language Processing-Anwendungen wie zum Beispiel Machine Translation und ist aus diesem Grunde auch ein wichtiger Aspekt der Forschung. \\
+Unter Semantic Argument Classification versteht man, einem Satz seine semantische Rollen wie zum Beispiel Agens, Patiens etc. zuzuweisen. Vereinfacht gesagt versucht man zu klären, \glqq wer wem was antut\grqq. Beispielsweise würde der Satz \glqq It operates stores mostly in Iowa and Nebraska\grqq folgendermaßen annotiert werden: $ [_{\textbf{Arg0}} It][_{\textbf{Pred}} operates][_{\textbf{Arg1}} stores][_{\textbf{ArgLoc}} mostly\ in\ Iowa\\ and\ Nebraska] $. Sie gehört zum grundlegenden Pre-Processing für verschiedene Natural Language Processing-Anwendungen wie zum Beispiel Machine Translation und ist aus diesem Grunde auch ein wichtiger Aspekt der Forschung. \\
 Angelehnt an die Veröffentlichung von \cite{Pradhan05supportvector} versuchten wir im Verlauf unseres Projekts diese Aufgabe automatisch und überwacht durch Machine Learning-Ansätze umzusetzen. 
 
 \section{Grundlagen}
@@ -62,14 +62,15 @@ Als Grundlage für unsere Experimente wurden verschiedene Datensätze und Tools 
 %umsetzung
 \section{Features}
 \subsection{einzelne Features}
-Für das Experiment wurden 5 Features extrahiert und ihr Einfluss auf die Ergebnisse getestet. Das erste Feature, \textbf{Predicate}, ist einfach die lemmatisierte Form des Prädikats. In unserem Datenset trat dieses Feature in 3966 verschiedenen Werten auf. Zweites Feature, \textbf{Path}, beschreibt den Weg, der in einem Syntaxbaum durchlaufen werden muss, um von einem Argument zum Prädikat der Instanz zu gelangen. Dies wird durch $\uparrow$ und $\downarrow$ gekennzeichnet.
+Für das Experiment wurden 5 Features extrahiert und ihr Einfluss auf die Ergebnisse getestet.\\
+Das erste Feature, \textbf{Predicate}, ist einfach die lemmatisierte Form des Prädikats. In unserem Datenset trat dieses Feature in 3966 verschiedenen Werten auf.\\
+Zweites Feature, \textbf{Path}, beschreibt den Weg, der in einem Syntaxbaum durchlaufen werden muss, um von einem Argument zum Prädikat der Instanz zu gelangen. Dies wird durch $\uparrow$ und $\downarrow$ gekennzeichnet.
 
 \begin{center}
 \Tree [.S [\qroof{The lawyers\\ \textbf{ARG0}}.NP  ] [.VP [.VBD {went\\ \textbf{Predicate}} ] [.PP {to\\ \textbf{Null}} ] [.NP {work\\ \textbf{ARG4}} ] ] ]
 \end{center}
 
-Im Satz \glqq The lawyers went to work\grqq\ würde dieses Feature beispielsweise den Wert NP $\uparrow$ S $\downarrow$ VP $\downarrow$ VBD annehmen. Dieses Feature hat sehr viele verschiedene Ausprägungen( 41737 distinct values), die durch verschiedene Satzstrukuren verursacht werden.\\ In der Evaluation betrachten wir ebenfalls Vor- und Nachteile der Vereinfachung dieses Features in der Form von bsp. Duplikatbeseitigung (... $\uparrow$ S $\downarrow$ VP $\downarrow$ VP $\downarrow$ ... $\Rightarrow$ ... $\uparrow$ S $\downarrow$ VP $\downarrow$ ... ) oder Pruning (NP $\uparrow$ S $\downarrow$ VP $\downarrow$ ... $\Rightarrow$ NP $\uparrow$). Im Feature \textbf{Phrase Type} ist kodiert, welchem Konstituententypus (also NP, VP, etc.) das gesuchte Argument angehört. In unserem Fall sind dies 65 verschiedene Kategorien, nachdem für unsere Zwecke zu eingrenzende Typen konvertiert wurden (z.B. NP-SUBJ zu NP).\\
-\\
+Im Satz \glqq The lawyers went to work\grqq\ würde dieses Feature beispielsweise den Wert NP $\uparrow$ S $\downarrow$ VP $\downarrow$ VBD annehmen. Dieses Feature hat sehr viele verschiedene Ausprägungen (41737 distinct values), die durch verschiedene Satzstrukuren verursacht werden.\\ In der Evaluation betrachten wir ebenfalls Vor- und Nachteile der Vereinfachung dieses Features in der Form von bsp. Duplikatbeseitigung (... $\uparrow$ S $\downarrow$ VP $\downarrow$ VP $\downarrow$ ... $\Rightarrow$ ... $\uparrow$ S $\downarrow$ VP $\downarrow$ ... ) oder Pruning (NP $\uparrow$ S $\downarrow$ VP $\downarrow$ ... $\Rightarrow$ NP $\uparrow$). Im Feature \textbf{Phrase Type} ist kodiert, welchem Konstituententypus (also NP, VP, etc.) das gesuchte Argument angehört. In unserem Fall sind dies 65 verschiedene Kategorien, nachdem für unsere Zwecke zu eingrenzende Typen konvertiert wurden (z.B. NP-SUBJ zu NP).\\
 Die anderen beiden Features \textbf{Position} und \textbf{Voice} sollten beide intuitiv betrachtet binär sein, durch die unvollständige Annotation in Propbank ist dies im Falle von Voice, also ob das Argument passiv oder aktiv ist, nicht der Fall. Hier gibt es noch einen dritten Wert unknown, wenn für das Prädikat keine Angabe diesbezüglich gemacht wurde. Position hingegen ist ein rein binäres Feature und gibt an, ob das Argument vor oder nach dem Prädikat auftritt. 
 
 \subsection{Featureextraktion}
@@ -106,7 +107,7 @@ Dabei wurden jedoch alle Instanzen der häufigsten Klasse zugeteilt, was an eine
 
 Auf dem Development Set konnten wir feststellen, dass wir durch das Entfernen des Path Features bessere Ergebnisse erreichen konnten.
 Auch weitere Versuche das Path Feature zu verbessern, indem wir aufeinanderfolgende, doppelte Kategorien zusammenfassen und nur den Pfad vom Argument aufwärts benutzen, schlugen fehl. Effektiv verschlechterte das Feature sogar unsere Ergebnisse mit einem Abfall auf 0.738 für den Naïve Bayes und 0.838 für den J48-Algorithmus im F-Measure \\
-Deshalb ließen wir dieses Feature, obwohl es im Originalpaper mit einbezogen wurde, aus unserer Evaluierung auf dem Testset raus, um ein besseres Ergebnis zu erzielen. 
+Deshalb ließen wir dieses Feature, obwohl es im Originalpaper \citep{Pradhan05supportvector} mit einbezogen wurde, aus unserer Evaluierung auf dem Testset raus, um ein besseres Ergebnis zu erzielen. 
 
 
 
@@ -121,14 +122,18 @@ j48 Tree          & 0.847      	   & 0.849            & 0.846
 \end{table}
 
 Die von uns mit Bedacht niedrig gelegte ZeroR Baseline konnten wir, wie zu erwarten war, definitiv schlagen. Von den beiden Algorithmen, die wir nach mehreren Durchläufen für am passendsten erachtet hatten, erwies sich der Decision Tree Algorithmus als deutlich effektiver als der Naïve Bayes Algorithmus.\\
-Hierbei wird ARG0 sehr präzise klassifiziert und weitet sich dabei allerdings auch merklich in die Instanzen der ARG1-Klasse aus, was bei der letzteren zu einem leichten Abfall im Recall führt. Bei der Unterscheidung von Agens und Patiens besteht also ein geringfügiger Bias zu einer Klassifizierung als Agens. Alle weiteren Klassen zeigen stets die größten Überschneidungen mit ihren semantisch ähnlichsten Nachbarn (ARG3 und ARG2, ARG5 und ARGM etc.), was also bedeutet, dass selbst bei einer Missklassifikation die etwaige Valenz beibehalten wird.\\
-Insgesamt zeigt sich also, dass, wie zu erwarten, die häufigsten Argumentklassen am besten trainiert und folglich auch am präzisesten klassifiziert werden und sich die semantische Ähnlichkeit, insbesondere bei den vom Prädikat weiter entfernten Klassen, ebenfalls stark in der Ähnlichkeit der Feature-Werte widerspiegelt.
-%Hier noch mehr schreiben????
+Hierbei wird ARG0 sehr präzise klassifiziert und weitet sich dabei allerdings auch merklich in die Instanzen der ARG1-Klasse aus, was bei der letzteren zu einem leichten Abfall im Recall führt. Bei der Unterscheidung von Proto-Agens und -Patiens besteht also ein geringfügiger Bias zu einer Klassifizierung als Agens. Alle weiteren Klassen zeigen stets die größten Überschneidungen mit ihren semantisch ähnlichsten Nachbarn (ARG3 und ARG2, ARG5 und ARGM etc.), was also bedeutet, dass selbst bei einer Missklassifikation die etwaige Valenz beibehalten wird.\\
+Insgesamt zeigt sich also, dass, wie zu erwarten, die häufigsten Argumentklassen am besten trainiert und folglich auch am präzisesten klassifiziert werden und sich insbesondere bei den vom Prädikat weiter entfernten Klassen ARG2-ARGM die semantische Ähnlichkeit stark in der Ähnlichkeit der Feature-Werte widerspiegelt.
 
 
 
 \section{Retrospektive}
-
+Über den gesamten Projektverlauf hinweg hoben sich einige Aspekte immer wieder hervor.\\
+Die Aufgabe der semantischen Argumentklassifikation erwies sich, wie man an den Inhalten der Penn TreeBank sehen kann, als äußerst divers und sehr wichtig für die tiefere Verarbeitung der natürlichen Sprache. Das Annotationschema der PropBank zeigte, dass es ohne größere Schwierigkeiten auf diese verschiedensten semantischen Kontexte appliziert werden kann ohne an Allgemeinheit zu verlieren und somit sehr gut für diverse Machine Learning Methoden geeignet ist.\\
+Die Feature-Extraktion und anschließende -Selektion, bei der im Gegenzug versucht werden musste, den allgemeinen und somit auch teils vagen Argumentklassen der PropBank distinktive Features ohne Overfitting zuzuweisen, stellte sich, wie zu erwarten, als der komplexeste Teil des Projektes heraus. Das Path-Feature zeigt wahrscheinlich am deutlichsten, wie selbst nach einer Anpassung und Reduktion der Feature-Werte die Ergebnisse sich nur minimal oder gar nicht verbessern, obwohl es dem ersten Anschein nach eines der wichtigsten Feature zu sein schien, um insbesondere ähnliche Argumentklassen zu unterscheiden.\\
+Zuletzt zeigten sich bei den angewandten maschinellen Lernverfahren sowohl die Stärken und Schwächen bei der Verarbeitung von Datensätzen deren Features zahlreiche Werte annehmen. Die SVM, welche ursprünglich an \cite{Pradhan05supportvector} angelehnt, der wichtigste Algorithmus werden sollte, stellte sich (zumindest in den uns vorliegenden Umsetzungen für Weka) wegen Klassenanzahl und der hohen Anzahl an Feature-Werten als ungeeignet heraus. Eventuell hätte eine Balancierung der Daten gewünschte Ergebnisse erzielt. Dies setzt allerdings eine weitere Vorverarbeitung der Daten voraus, die sich von den anderen Algorithmen differenziert hätte.\\
+Die Ergebnisse Naïve Bayes sind hingegen wesentlich vielversprechender und zeigen, dass trotz der Einfachheit des Algorithmus unsere Feature distinktiv genug sind um ein F-Measure von rund 77\% zu erreichen. J48 benötigte zwar auf Grund der höheren Komplexität wesentlich mehr Berechnungsressourcen, stellte sich jedoch als signifikant präziser heraus. Dies lässt vermuten, dass das Zusammenspiel der Features wichtiger ist, als das jeweils einzeln betrachtete reine Maximum.\\
+Insgesamt ziehen wir also den Schluss, dass die Umsetzung der automatischen semantische Argumentklassifikation mittels Maschinenlernverfahren mit einem allgemein gehaltenen Annotationsschema und einem Algorithmus, der Feature als von einander abhängig betrachtet, bereits sehr zeigenswerte Ergebnisse erzielt werden können.
 
 
 
