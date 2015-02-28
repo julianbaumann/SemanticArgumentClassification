@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.11)  26 FEB 2015 11:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.11)  28 FEB 2015 12:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -524,11 +524,8 @@ File: argext_graphic.png Graphic file (type png)
 <use argext_graphic.png>
 Package pdftex.def Info: argext_graphic.png used on input line 79.
 (pdftex.def)             Requested size: 332.43501pt x 172.91237pt.
- [3 <./argext_graphic.png>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[4] (./Abschlussbericht.bbl) [5] (./Abschlussbericht.aux) ) 
+ [3 <./argext_graphic.png>] [4] (./Abschlussbericht.bbl) [5] (./Abschlussberich
+t.aux) ) 
 Here is how much of TeX's memory you used:
  2820 strings out of 494976
  37534 string characters out of 6179137
@@ -537,16 +534,15 @@ Here is how much of TeX's memory you used:
  8241 words of font info for 29 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  38i,20n,25p,963b,340s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
-i10.pfb>
-Output written on Abschlussbericht.pdf (5 pages, 182378 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmti10.pfb>
+Output written on Abschlussbericht.pdf (5 pages, 182530 bytes).
 PDF statistics:
  55 PDF objects out of 1000 (max. 8388607)
  37 compressed objects within 1 object stream
