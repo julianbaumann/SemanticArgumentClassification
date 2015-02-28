@@ -76,7 +76,7 @@ Die anderen beiden Features \textbf{Position} und \textbf{Voice} sollten beide i
 Das Ziel unserer Featureextraktion bestand darin, die Daten der PropBank und Penn TreeBank mit den oben genannten Features in normalisierter Form zusammenzuführen und in das Weka-kompatible Attribute-Relation File Format (ARFF) zu konvertieren.\\
 Instanzen der PropBank liegen in einem Space- und Newline-separierten Textformat vor. Innerhalb einer Instanz verweisen Pointer auf Teilbäume der korrespondierenden Penn TreeBank Sätze, die in einem Klammer-Format annotiert sind.
 \begin{center}
-	\includegraphics[scale=0.23]{argext_graphic}
+	\includegraphics[scale=0.23]{argext_graphic.png}
 \end{center}
 Mit Hilfe des NLTK, welches die rohen Textdateien beider Korpora in vordefinierte Klassen lädt, erstellen wir ARGInstances, in denen alle Features in normalisierter- und leicht abrufbarer Form vorliegen. Die Helferklasse ARGInstanceBuilder übernimmt die Zusammenführung beider Korpora, die Berechnung des Path-Features mittels Baumtraversierung und Ermittlung des Lowest-Common-Ancestors und ähnliche Extraktionsaufgaben, sowie die finale Normalisierung. Die so generierten ARGInstances werden zuletzt an ein ARFFDocument weitergegeben, welches Trainings-, Development- und Testdaten in ARFF-Dateien schreibt, die direkt mit Weka weiterverarbeitet werden können.
 
@@ -120,12 +120,18 @@ j48 Tree          & 0.847      	   & 0.849            & 0.846
 \end{tabular}
 \end{table}
 
-Die von uns mit Bedacht niedrig gelegte ZeroR Baseline konnten wir, wie zu erwarten war, definitiv schlagen. Von den beiden Algorithmen, die wir nach mehreren Durchläufen für am passendsten erachtet hatten, erwies sich der Decision Tree Algorithmus als deutlich effektiver als der Naïve Bayes Algorithmus.
+Die von uns mit Bedacht niedrig gelegte ZeroR Baseline konnten wir, wie zu erwarten war, definitiv schlagen. Von den beiden Algorithmen, die wir nach mehreren Durchläufen für am passendsten erachtet hatten, erwies sich der Decision Tree Algorithmus als deutlich effektiver als der Naïve Bayes Algorithmus.\\
+Hierbei wird ARG0 sehr präzise klassifiziert und weitet sich dabei allerdings auch merklich in die Instanzen der ARG1-Klasse aus, was bei der letzteren zu einem leichten Abfall im Recall führt. Bei der Unterscheidung von Agens und Patiens besteht also ein geringfügiger Bias zu einer Klassifizierung als Agens. Alle weiteren Klassen zeigen stets die größten Überschneidungen mit ihren semantisch ähnlichsten Nachbarn (ARG3 und ARG2, ARG5 und ARGM etc.), was also bedeutet, dass selbst bei einer Missklassifikation die etwaige Valenz beibehalten wird.\\
+Insgesamt zeigt sich also, dass, wie zu erwarten, die häufigsten Argumentklassen am besten trainiert und folglich auch am präzisesten klassifiziert werden und sich die semantische Ähnlichkeit, insbesondere bei den vom Prädikat weiter entfernten Klassen, ebenfalls stark in der Ähnlichkeit der Feature-Werte widerspiegelt.
 %Hier noch mehr schreiben????
 
 
 
 \section{Retrospektive}
+
+
+
+
 \bibliographystyle{abbrv}
 \bibliography{Quellen}
 
